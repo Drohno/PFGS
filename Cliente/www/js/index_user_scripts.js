@@ -82,6 +82,13 @@
          activate_page("#tiendas");
     });
 
+        /* button  #bPt */
+    $(document).on("click", "#bPt", function(evt)
+    {
+         /*global activate_page */
+         activate_page("#mainpage");
+    });
+
     }
  document.addEventListener("app.Ready", register_event_handlers, false);
 })();

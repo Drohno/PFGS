@@ -433,3 +433,13 @@ label:empty {
   float: right;
   margin: 10px;
 }
+.vertical-col > .label {
+  display: block;
+}
+.empresaSlider {
+  position: absolute;
+  bottom: 0px;
+  background-color: rgba(0, 0, 0, 0);
+  border: 0px;
+  left: 0px;
+}
