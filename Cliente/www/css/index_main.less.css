@@ -285,9 +285,9 @@ body#afui .splt {
 }
 @media all {
   .bar-bg {
-    background-color: #dadada;
-    background-image: linear-gradient(left, #ff921a 0%, #ff921a 0%, #dd2a45 100%, #dd2a45 100%);
-    background-image: -webkit-linear-gradient(left, #ff921a 0%, #ff921a 0%, #dd2a45 100%, #dd2a45 100%);
+    background-color: ;
+    background-image: linear-gradient(top, #e80005 0%, #e80005 0%, #160306 100%, #160306 100%);
+    background-image: -webkit-linear-gradient(top, #e80005 0%, #e80005 0%, #160306 100%, #160306 100%);
     background-position: center center;
     background-repeat: no-repeat;
     background-attachment: scroll;
@@ -428,4 +428,8 @@ label:empty {
 }
 .ButtonStyle {
   background-color: #DF382C;
+}
+.navStyleButton {
+  float: right;
+  margin: 10px;
 }

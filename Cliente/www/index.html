@@ -70,31 +70,30 @@
         <script type="application/javascript" src="sidebar/js/sidebar.js"></script>
         <script type="application/javascript" src="js/index_user_scripts.js"></script>
         <script type="application/javascript" src="bootstrap/js/bootstrap.min.js"></script>
+        <script type="application/javascript" src="xdk/ad/bs_subpage.js"></script>
     </head>
 
     <body>
-        <!-- IMPORTANT: Do not include a weinre script tag as part of your release builds! -->
-        <!-- Place your remote debugging (weinre) script URL from the Test tab here, if it does not work above -->
-        <!-- <script src="http://debug-software.intel.com/target/target-script-min.js#insertabiglongfunkynumberfromthexdkstesttab"></script> -->
         <div class="upage" id="mainpage">
             <div class="upage-outer">
                 <div class="upage-content ac0 content-area vertical-col left" id="pagina_principal">
                     <!-- Codi navbar -->
                     <div role="navigation" class="navbar navbar-default full-width-widget widget uib_w_3 d-margins" data-uib="twitter%20bootstrap/navbar" data-ver="1">
-                        <span><button style="float: right; margin-right: 10px" class="btn widget uib_w_4 d-margins btn-danger" data-uib="twitter%20bootstrap/button" data-ver="1"><i class="fa fa-navicon" data-position="icon only"></i></button></span>
+                        <span><button class="btn widget uib_w_4 d-margins btn-danger navStyleButton" data-uib="twitter%20bootstrap/button" data-ver="1" id="navBPrinci"><i class="fa fa-navicon" data-position="icon only"></i></button></span>
                         <a class="navbar-brand" href="#">Página Principal</a>
                         <div id="bs-navbar-0" class="navbar-collapse collapse"></div>
                     </div>
                     <!-- Codi del sidebar -->
-                    <div class="inner-element uib_w_1 uib_sidebar leftbar bar-bg thumb-bg bar-gutter swipe" data-uib="layout/left_sidebar" data-ver="1" data-anim="{'style':'overlap', 'v':200, 'side':'left', 'dur':200}" id="sidebar">
+                    <div class="inner-element uib_w_1 uib_sidebar leftbar bar-bg thumb-bg bar-gutter swipe" data-uib="layout/left_sidebar" data-ver="1" data-anim="{'style':'overlap', 'v':200, 'side':'left', 'dur':200}" id="sbPrin">
                         <div class="sidebar-content content-area vertical-col">
 
                             <div class="btn-group uib-bs-flex widget uib_w_6 d-margins btn-group-vertical" data-uib="twitter%20bootstrap/button_group" data-ver="1">
-                                <button class="btn widget uib_w_7 vertical-group ButtonStyle btn-default" data-uib="twitter%20bootstrap/button" data-ver="1">Botigues</button>
-                                <button class="btn widget uib_w_8 vertical-group btn-default ButtonStyle" data-uib="twitter%20bootstrap/button" data-ver="1">Promos</button>
+                                <button class="btn widget uib_w_7 vertical-group ButtonStyle btn-default" data-uib="twitter%20bootstrap/button" data-ver="1" id="bTp">Tiendas</button>
+                                <button class="btn widget uib_w_8 vertical-group ButtonStyle btn-default" data-uib="twitter%20bootstrap/button" data-ver="1" id="bPp">Promos</button>
                             </div>
                         </div>
                     </div>
+                    <!-- IMAGEN TIERRA -->
                     <div class="widget uib_w_5 scale-image d-margins" data-uib="media/img" data-ver="0">
                         <figure class="figure-align">
                             <img src="http://www.indiantrailslibrary.org/images/planet-earth.png">
@@ -103,7 +102,28 @@
                         </figure>
                     </div>
                 </div>
-                <div id="lista-tiendas" class="upage-content vertical-col left hidden"></div>
+
+            </div>
+        </div>
+        <div class="upage hidden" id="tiendas">
+            <div class="upage-outer">
+                <div class="upage-content ac0 content-area vertical-col left" id="page_23_28">
+                    <div role="navigation" class="navbar navbar-default full-width-widget widget uib_w_9 d-margins" data-uib="twitter%20bootstrap/navbar" data-ver="1">
+                        <button class="btn widget uib_w_11 d-margins btn-danger navStyleButton" data-uib="twitter%20bootstrap/button" data-ver="1" id="navBtiendas"><i class="fa fa-navicon" data-position="icon only"></i>
+                        </button><a class="navbar-brand" href="#">Tiendas</a>
+                        <div id="bs-navbar-0" class="navbar-collapse collapse"></div>
+                    </div>
+
+                </div>
+                <div class="inner-element uib_w_10 uib_sidebar leftbar bar-bg thumb-bg bar-gutter" data-uib="layout/left_sidebar" data-ver="1" data-anim="{'style':'overlap', 'v':200, 'side':'left', 'dur':200, 'io':true}" id="sbTiendas">
+                    <div class="sidebar-content content-area vertical-col">
+
+                        <div class="btn-group uib-bs-flex widget uib_w_12 d-margins btn-group-vertical" data-uib="twitter%20bootstrap/button_group" data-ver="1">
+                            <button class="btn widget uib_w_13 vertical-group btn-danger" data-uib="twitter%20bootstrap/button" data-ver="1" id="bPt">Principal</button>
+                            <button class="btn widget uib_w_14 btn-danger vertical-group" data-uib="twitter%20bootstrap/button" data-ver="1">Promos</button>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </body>
