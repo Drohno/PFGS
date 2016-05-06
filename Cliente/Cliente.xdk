@@ -6,7 +6,7 @@
       "projectTypeName": "com.intel.xdk.projecttype.jsapp",
       "src": "jsapp/template-blank-cordova-ad-project/sample.zip",
       "projectGuid": "b384d701-d406-4b4b-87ec-78f4198c5c01",
-      "lastModifiedDate": 1462459704458,
+      "lastModifiedDate": 1462474854077,
       "creationDate": 1462379172914
     },
     "XDK-app-designer": "true",
@@ -87,12 +87,12 @@
         "preferences_": {
           "android-minSdkVersion": "14",
           "android-targetSdkVersion": "21",
-          "android-installLocation": "auto",
+          "android-installLocation": "preferExternal",
           "android-signed": true
         },
         "isActive_": true,
         "appName_": "Cliente",
-        "appID_": "xdk.intel.blank.ad.template.crosswalk",
+        "appID_": "xdk.dandj.cliente",
         "appAccess_": {
           "mode": "whitelist",
           "network": [
@@ -113,12 +113,12 @@
         "splashes_": [],
         "addlPermissions_": "",
         "excludedLibraries_": "",
-        "certificateId_": "",
+        "certificateId_": "oHTV6Mb2Vk69kpaHnp0cZA2",
         "cordovaCLIVersion_": "5.4.1",
         "crosswalkVersion_": "16",
         "appVersion_": "0.0.1",
-        "appAuthor_": "Intel XDK",
-        "appDescription_": "Template to develop a Cordova mobile web app using the App Designer UI editor.",
+        "appAuthor_": "D&J Soft.",
+        "appDescription_": "Aplicación de Asociación de Comercios Locales",
         "appVersionCode_": "1"
       },
       "iOS": {

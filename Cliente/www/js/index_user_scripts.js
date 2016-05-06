@@ -89,6 +89,69 @@
          activate_page("#mainpage");
     });
 
+        /* button  #navBpromos */
+    $(document).on("click", "#navBpromos", function(evt)
+    {
+         /*global uib_sb */
+         /* Other possible functions are:
+           uib_sb.open_sidebar($sb)
+           uib_sb.close_sidebar($sb)
+           uib_sb.toggle_sidebar($sb)
+            uib_sb.close_all_sidebars()
+          See js/sidebar.js for the full sidebar API */
+
+         uib_sb.toggle_sidebar($("#sbpromos"));
+    });
+
+        /* button  #bPp */
+    $(document).on("click", "#bPp", function(evt)
+    {
+         /*global activate_page */
+         activate_page("#promos");
+    });
+
+        /* button  #bPp */
+    $(document).on("click", "#bPp", function(evt)
+    {
+         /*global activate_page */
+         activate_page("#promos");
+    });
+
+        /* button  #bPp */
+    $(document).on("click", "#bPp", function(evt)
+    {
+         /*global uib_sb */
+         /* Other possible functions are:
+           uib_sb.open_sidebar($sb)
+           uib_sb.close_sidebar($sb)
+           uib_sb.toggle_sidebar($sb)
+            uib_sb.close_all_sidebars()
+          See js/sidebar.js for the full sidebar API */
+
+         uib_sb.toggle_sidebar($("#sbpromos"));
+    });
+
+        /* listitem  Fotografía e Informática */
+    $(document).on("click", ".uib_w_18", function(evt)
+    {
+         /*global activate_page */
+         activate_page("#V20CMSTUDIO");
+    });
+
+        /* button  #navB */
+    $(document).on("click", "#navB", function(evt)
+    {
+         /*global uib_sb */
+         /* Other possible functions are:
+           uib_sb.open_sidebar($sb)
+           uib_sb.close_sidebar($sb)
+           uib_sb.toggle_sidebar($sb)
+            uib_sb.close_all_sidebars()
+          See js/sidebar.js for the full sidebar API */
+
+         uib_sb.toggle_sidebar($("#sb"));
+    });
+
     }
  document.addEventListener("app.Ready", register_event_handlers, false);
 })();

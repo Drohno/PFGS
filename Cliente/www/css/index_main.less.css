@@ -443,3 +443,31 @@ label:empty {
   border: 0px;
   left: 0px;
 }
+.allow-badge > .badge.glyphicon {
+  display: inline-block;
+}
+.list-group .d-margins {
+  margin: 0;
+}
+.checkbox-padding-left {
+  padding-left: 20px;
+}
+.left-receptacle {
+  float: left;
+}
+.right-receptacle {
+  float: right;
+}
+[data-uib="media/text"] p:first-of-type {
+  margin-top: 0px;
+}
+.ellipsis {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+}
+@media all {
+  .maps-size {
+    height: 250px;
+  }
+}
