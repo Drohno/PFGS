@@ -162,6 +162,13 @@
          activate_subpage("#abacus");
     });
 
+        /* listitem  Informática Sant Boi */
+    $(document).on("click", ".uib_w_20", function(evt)
+    {
+         /*global activate_subpage */
+         activate_subpage("#informaticastboi");
+    });
+
     }
  document.addEventListener("app.Ready", register_event_handlers, false);
 })();
