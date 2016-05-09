@@ -78,13 +78,13 @@
 
     <body>
         <!-- CODI PRINCIPAL-->
-        <div class="upage" id="mainpage">
+        <div class="upage fondoGeneral" id="mainpage">
             <div class="upage-outer">
                 <div class="upage-content ac0 content-area vertical-col left" id="pagina_principal">
                     <!-- Codi navbar -->
                     <div role="navigation" class="navbar navbar-default full-width-widget widget uib_w_3 d-margins" data-uib="twitter%20bootstrap/navbar" data-ver="1">
                         <span><button class="btn widget uib_w_4 d-margins navStyleButton btn-danger" data-uib="twitter%20bootstrap/button" data-ver="1" id="navBPrinci"><i class="fa fa-navicon" data-position="icon only"></i></button></span>
-                        <a class="navbar-brand" href="#">Página Principal</a>
+                        <a class="navbar-brand" href="#">Inicio</a>
                         <div id="bs-navbar-0" class="navbar-collapse collapse"></div>
                     </div>
                     <!-- Codi del sidebar -->
@@ -112,7 +112,7 @@
             </div>
         </div>
         <!-- CODI TIENDAS -->
-        <div class="upage hidden" id="tiendas">
+        <div class="upage hidden fondoGeneral" id="tiendas">
             <div class="upage-outer">
                 <!-- CODI NAVBAR -->
                 <div class="upage-content ac0 content-area vertical-col left" id="page_23_28">
@@ -152,7 +152,7 @@
                 </div>
             </div>
         </div>
-        <div class="upage vertical-col left hidden" id="promos">
+        <div class="upage vertical-col left hidden fondoGeneral" id="promos">
             <!-- CODI SLIDEBAR -->
             <div class="inner-element uib_w_10 uib_sidebar leftbar bar-bg thumb-bg bar-gutter swipe" data-uib="layout/left_sidebar" data-ver="1" data-anim="{'style':'overlap', 'v':200, 'side':'left', 'dur':200}" id="sbpromos">
                 <div class="sidebar-content content-area vertical-col">
@@ -172,45 +172,90 @@
             </div>
         </div>
         <!-- CODI 20CM STUDIO -->
-        <div class="upage vertical-col left hidden" id="V20CMSTUDIO">
+
+        <div class="upage vertical-col left hidden fondoGeneral" id="interface_tienda">
+            <!-- CÓDIGO COMÚN TIENDAS -->
             <!-- CODI SLIDEBAR -->
             <div class="inner-element uib_w_10 uib_sidebar leftbar bar-bg thumb-bg bar-gutter swipe" data-uib="layout/left_sidebar" data-ver="1" data-anim="{'style':'overlap', 'v':200, 'side':'left', 'dur':200}" id="sb">
                 <div class="sidebar-content content-area vertical-col">
                     <div class="btn-group uib-bs-flex widget uib_w_12 d-margins btn-group-vertical" data-uib="twitter%20bootstrap/button_group" data-ver="1">
-                        <button class="btn widget uib_w_13 vertical-group btn-danger" data-uib="twitter%20bootstrap/button" data-ver="1" id="bPt">Principal</button>
+                        <button class="btn widget uib_w_7 vertical-group ButtonStyle btn-default" data-uib="twitter%20bootstrap/button" data-ver="1" id="bPt">Principal</button>
                         <button class="btn widget uib_w_7 vertical-group ButtonStyle btn-default" data-uib="twitter%20bootstrap/button" data-ver="1" id="bTp">Tiendas</button>
                         <button class="btn widget uib_w_8 vertical-group ButtonStyle btn-default" data-uib="twitter%20bootstrap/button" data-ver="1" id="bPp">Promos</button>
                     </div>
                     <span class="widget uib_w_16 d-margins empresaSlider badge" data-uib="twitter%20bootstrap/badge_and_label" data-ver="1">D&amp;J Soft.</span>
                 </div>
             </div>
-            <!-- Codi navbar -->
-            <div role="navigation" class="navbar navbar-default full-width-widget widget uib_w_3 d-margins" data-uib="twitter%20bootstrap/navbar" data-ver="1">
-                <span><button class="btn widget uib_w_4 d-margins navStyleButton btn-danger" data-uib="twitter%20bootstrap/button" data-ver="1" id="navB"><i class="fa fa-navicon" data-position="icon only"></i></button></span>
-                <a class="navbar-brand" href="#">20 CM STUDIO</a>
-                <div id="bs-navbar-0" class="navbar-collapse collapse"></div>
-            </div>
-            <div class="widget uib_w_22 scale-image d-margins" data-uib="media/img" data-ver="0">
-                <figure class="figure-align">
-                    <img src="http://estaticos.qdq.com/swdata/logos/2/0/20cm-studio-barcelona.png">
-                    <figcaption data-position="bottom"></figcaption>
-                </figure>
-            </div>
-            <div class="tarea widget uib_w_21 d-margins" data-uib="media/text" data-ver="0" name="uib_w_21">
-                <div class="widget-container left-receptacle"></div>
-                <div class="widget-container right-receptacle"></div>
-                <div class="text-container">
-                    <p><strong>Sector:</strong> Serveis</p>
-
-                    <p><strong>Categoria:</strong> Fotografía i Informàtica</p>
-
-                    <p><strong>Contacte:</strong> marc@20cmstudio.com</p>
-
-                    <p><strong>Website: </strong>http://www.20cm.com.es/</p>
+            <!--TIENDA 20CM Studio -->
+            <div id="a20cmstudio" class="upage-content vertical-col left ">
+                <!-- Codi navbar -->
+                <div role="navigation" class="navbar navbar-default full-width-widget widget uib_w_3 d-margins" data-uib="twitter%20bootstrap/navbar" data-ver="1">
+                    <span><button class="btn widget uib_w_4 d-margins navStyleButton btn-danger" data-uib="twitter%20bootstrap/button" data-ver="1" id="navB"><i class="fa fa-navicon" data-position="icon only"></i></button></span>
+                    <a class="navbar-brand" href="#">20 CM STUDIO</a>
+                    <div id="bs-navbar-0" class="navbar-collapse collapse"></div>
                 </div>
+                <!-- IMAGEN EMPRESA -->
+                <div class="widget uib_w_22 scale-image d-margins" data-uib="media/img" data-ver="0">
+                    <figure class="figure-align">
+                        <img src="http://estaticos.qdq.com/swdata/logos/2/0/20cm-studio-barcelona.png">
+                        <figcaption data-position="bottom"></figcaption>
+                    </figure>
+                </div>
+                <!-- DESCRIPCIÓN COMERCIO -->
+                <div class="tarea widget uib_w_21 d-margins texto-tiendas" data-uib="media/text" data-ver="0" name="uib_w_21">
+                    <div class="widget-container left-receptacle"></div>
+                    <div class="widget-container right-receptacle"></div>
+                    <div class="text-container">
+                        <p><strong>Sector: </strong>Servicios</p>
+
+                        <p><strong>Categoría: </strong>Fotografía e Informática</p>
+
+                        <p><strong>Contacto: </strong>marc@20cmstudio.com</p>
+
+                        <p><strong><a href="http://www.20cm.com.es">Website</a></strong>
+                        </p>
+
+                    </div>
+                </div>
+                <!-- WIDGET GOOGLE -->
+                <div class="widget uib_w_23 maps-size d-margins" data-uib="media/google_maps" data-ver="0" data-rpath="null" data-zoom="6" data-marker-title="20 CM STUDIO"></div>
             </div>
-            <div class="widget uib_w_23 maps-size d-margins" data-uib="media/google_maps" data-ver="0" data-rpath="null" data-zoom="8" data-marker-title="20 CM STUDIO"></div>
+            <!-- TIENDA ABACUS -->
+            <div id="abacus" class="upage-content vertical-col left hidden">
+                <!-- Codi navbar -->
+                <div role="navigation" class="navbar navbar-default full-width-widget widget uib_w_3 d-margins" data-uib="twitter%20bootstrap/navbar" data-ver="1">
+                    <span><button class="btn widget uib_w_4 d-margins navStyleButton btn-danger" data-uib="twitter%20bootstrap/button" data-ver="1" id="navB"><i class="fa fa-navicon" data-position="icon only"></i></button></span>
+                    <a class="navbar-brand" href="#">ABACUS</a>
+                    <div id="bs-navbar-0" class="navbar-collapse collapse"></div>
+                </div>
+                <!-- IMAGEN EMPRESA -->
+                <div class="widget uib_w_22 scale-image d-margins fondoAbacus" data-uib="media/img" data-ver="0">
+                    <figure class="figure-align">
+                        <img src="http://abacus.coop/wp-content/uploads/2013/07/logo_Abacus11.png">
+
+                        <figcaption data-position="bottom"></figcaption>
+                    </figure>
+                </div>
+                <!-- DESCRIPCIÓN COMERCIO -->
+                <div class="tarea widget uib_w_21 d-margins texto-tiendas" data-uib="media/text" data-ver="0" name="uib_w_21">
+                    <div class="widget-container left-receptacle"></div>
+                    <div class="widget-container right-receptacle"></div>
+                    <div class="text-container">
+                        <p><strong>Sector: </strong>Ocio, Cultura</p>
+
+                        <p><strong>Categoría: </strong> Librerías, papelerías</p>
+
+                        <p><strong>Contacto: </strong>stboi@abacus.coop</p>
+
+                        <p><strong><a href="http://abacus.coop/es/locations/abacus-sant-boi-de-llobregat/">Website</a></strong>
+                        </p>
+                    </div>
+                </div>
+                <!-- WIDGET GOOGLE -->
+                <div class="widget uib_w_23 maps-size d-margins" data-uib="media/google_maps" data-ver="0" data-rpath="null" data-zoom="6" data-marker-title="ABACUS" data-center-longitude="41.340814" data-center-latitude="2.043419"></div>
+            </div>
         </div>
+
     </body>
 
 </html>

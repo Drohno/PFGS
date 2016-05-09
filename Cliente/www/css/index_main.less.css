@@ -471,3 +471,20 @@ label:empty {
     height: 250px;
   }
 }
+@media all {
+  .texto-tiendas p {
+    text-align: center;
+  }
+}
+.fondoAbacus {
+  color: #484848 !important;
+  background-color: orange;
+}
+@media all {
+  .fondoGeneral {
+    background-color: #ffa2a2;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+  }
+}

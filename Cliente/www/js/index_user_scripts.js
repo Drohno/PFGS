@@ -132,11 +132,7 @@
     });
 
         /* listitem  Fotografía e Informática */
-    $(document).on("click", ".uib_w_18", function(evt)
-    {
-         /*global activate_page */
-         activate_page("#V20CMSTUDIO");
-    });
+
 
         /* button  #navB */
     $(document).on("click", "#navB", function(evt)
@@ -150,6 +146,20 @@
           See js/sidebar.js for the full sidebar API */
 
          uib_sb.toggle_sidebar($("#sb"));
+    });
+
+        /* listitem  Fotografía e Informática */
+    $(document).on("click", ".uib_w_18", function(evt)
+    {
+         /*global activate_subpage */
+         activate_subpage("#a20cmstudio");
+    });
+
+        /* listitem  Librerías, papelerías */
+    $(document).on("click", ".uib_w_19", function(evt)
+    {
+         /*global activate_subpage */
+         activate_subpage("#abacus");
     });
 
     }
