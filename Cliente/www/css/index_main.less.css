@@ -493,3 +493,8 @@ label:empty {
     height: 250px;
   }
 }
+@media all {
+  .maps_size {
+    height: 250px;
+  }
+}
