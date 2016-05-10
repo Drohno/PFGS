@@ -488,3 +488,8 @@ label:empty {
     background-attachment: fixed;
   }
 }
+@media all {
+  .image-gallery-size {
+    height: 250px;
+  }
+}
