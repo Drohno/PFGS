@@ -6,7 +6,7 @@
       "projectTypeName": "com.intel.xdk.projecttype.jsapp",
       "src": "jsapp/template-blank-cordova-ad-project/sample.zip",
       "projectGuid": "b384d701-d406-4b4b-87ec-78f4198c5c01",
-      "lastModifiedDate": 1462799976784,
+      "lastModifiedDate": 1462894457677,
       "creationDate": 1462379172914
     },
     "XDK-app-designer": "true",
@@ -60,39 +60,24 @@
         "name": "Device",
         "description": "Cordova Device Plugin",
         "checksum": "927290ca"
-      },
-      {
-        "id": "cordova-plugin-splashscreen",
-        "version": "3.2.0",
-        "selectedState": "Included",
-        "data": {},
-        "paramvals": {},
-        "dependsOn": [],
-        "dependedBy": [],
-        "originType": "cordova.io",
-        "origin": "cordova-plugin-splashscreen",
-        "permissions": {},
-        "topLevel": true,
-        "gitref": "",
-        "name": "Splashscreen",
-        "description": "Cordova Splashscreen Plugin",
-        "checksum": "452a4659"
       }
     ],
     "buildConfigurations": {
       "Android": {
         "platform_": "android",
-        "runtime_": "Crosswalk with Cordova 3.x",
+        "runtime_": "Cordova 3.x",
         "name_": "Android",
         "preferences_": {
           "android-minSdkVersion": "14",
           "android-targetSdkVersion": "21",
           "android-installLocation": "preferExternal",
-          "android-signed": true
+          "android-signed": true,
+          "Orientation": "portrait",
+          "Fullscreen": true
         },
         "isActive_": true,
-        "appName_": "Cliente",
-        "appID_": "xdk.dandj.cliente",
+        "appName_": "Sant Boi Comercial",
+        "appID_": "xdk.dandj.stboi",
         "appAccess_": {
           "mode": "whitelist",
           "network": [
@@ -115,10 +100,10 @@
         "excludedLibraries_": "",
         "certificateId_": "oHTV6Mb2Vk69kpaHnp0cZA2",
         "cordovaCLIVersion_": "5.4.1",
-        "crosswalkVersion_": "16",
-        "appVersion_": "0.0.1",
+        "crosswalkVersion_": "shared",
+        "appVersion_": "0.0.4",
         "appAuthor_": "D&J Soft.",
-        "appDescription_": "Aplicación de Asociación de Comercios Locales",
+        "appDescription_": "Aplicación de Asociación de Comercios Locales  de Sant Boi de Llobregat",
         "appVersionCode_": "1"
       },
       "iOS": {
@@ -129,7 +114,7 @@
           "ios-configuration": "adhoc",
           "deployment-target": "8.0"
         },
-        "isActive_": true,
+        "isActive_": false,
         "appName_": "Cliente",
         "appID_": "xdk.intel.blank.ad.template",
         "appAccess_": {
@@ -170,7 +155,7 @@
           "windows-publisher-display-name": "",
           "windows-publisher-id": ""
         },
-        "isActive_": true,
+        "isActive_": false,
         "appName_": "Cliente",
         "appID_": "xdk.intel.blank.ad.template",
         "appAccess_": {
