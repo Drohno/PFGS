@@ -12,23 +12,7 @@
         <meta charset="UTF-8">
         <title>Blank App Designer Cordova Web App Project Template</title>
         <meta http-equiv="Content-type" content="text/html; charset=utf-8">
-
-        <!--
-  * The "meta viewport" tag (below) helps your app size appropriately to a device's ideal viewport.
-  * Note that Windows device viewports work better when initialized using the @viewport CSS rule.
-  * For a quick overview of "meta viewport" and @viewport, see this article:
-  *   http://webdesign.tutsplus.com/tutorials/htmlcss-tutorials/quick-tip-dont-forget-the-viewport-meta-tag
-  * To see how it works, try your app on a real device with and without a "meta viewport" tag.
-  * Additional useful references include:
-  *   http://www.quirksmode.org/mobile/viewports.html
-  *   http://www.quirksmode.org/mobile/metaviewport/devices.html
-  *   https://developer.apple.com/library/safari/documentation/AppleApplications/Reference/SafariHTMLRef/Articles/MetaTags.html
--->
-
-        <!-- <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1"> -->
         <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, user-scalable=no">
-        <!-- <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes, minimum-scale=1, maximum-scale=2"> -->
-
         <style>
             /* following three (cascaded) are equivalent to above three meta viewport statements */
             /* see http://www.quirksmode.org/blog/archives/2014/05/html5_dev_conf.html */
@@ -41,21 +25,6 @@
         <link rel="stylesheet" href="css/app.css">
         <link rel="stylesheet" type="text/css" href="css/index_main.less.css" class="main-less">
 
-        <!-- IMPORTANT: Do not include a weinre script tag as part of your release builds! -->
-        <!-- Place your remote debugging (weinre) script URL from the Test tab here, if it does not work below -->
-        <!-- <script src="http://debug-software.intel.com/target/target-script-min.js#insertabiglongfunkynumberfromthexdkstesttab"></script> -->
-
-        <!-- Recommended location for your JavaScript libraries -->
-        <!-- These library references (below) are just examples to give you the general idea... -->
-        <!-- <script src="lib/mc/hammer.js"></script> -->
-        <!-- <script src="lib/ft/fastclick.js"></script> -->
-
-        <!--
-  * cordova.js is a phantom lib for "Cordova HTML5 web app," it does nothing in a "Standard HTML5 web app"
-  * Seeing a "Failed to load resource: net::ERR_FILE_NOT_FOUND" message caused by this "cordova.js" script?
-  * The cordova.js script is required if you convert your "Standard HTML5" project into a "Cordova" project.
-  * You can safely ignore the error or comment out this line if you will not be developing a Cordova app.
--->
         <script src="cordova.js" id="xdkJScordova_"></script>
 
         <script src="js/app.js"></script>
@@ -222,7 +191,6 @@
                     </div>
                 </div>
                 <!-- WIDGET GOOGLE -->
-
                 <div class="widget uib_w_26 maps-size d-margins" data-uib="media/google_maps" data-ver="0" data-rpath="null" data-zoom="8" data-center-longitude="2.034504" data-center-latitude="41.349262" data-long="2.034504" data-lat="41.349262" data-marker-title="20 CM STUDIO"
                 data-animate-marker="bounce"></div>
             </div>
@@ -257,11 +225,9 @@
                         </p>
                     </div>
                 </div>
+                <!-- WIDGET GOOGLE -->
                 <div class="widget uib_w_25 maps-size d-margins" data-uib="media/google_maps" data-ver="0" data-rpath="null" data-zoom="8" data-center-latitude="41.340814" data-center-longitude="2.043419" data-long="2.043419" data-lat="41.340814" data-marker-title="Abacus"
                 data-animate-marker="bounce"></div>
-
-                <!-- WIDGET GOOGLE -->
-
             </div>
             <!-- TIENDA INFORMÁTICA SANT BOI -->
             <div id="informaticastboi" class="upage-content vertical-col left hidden">
@@ -275,7 +241,6 @@
                 <div class="widget uib_w_22 scale-image d-margins" data-uib="media/img" data-ver="0">
                     <figure class="figure-align">
                         <img src="http://www.informaticasantboi.es/web/wp-content/uploads/2013/09/Logo-Informatica-Sant-Boi1.png">
-
                         <figcaption data-position="bottom"></figcaption>
                     </figure>
                 </div>
@@ -295,10 +260,32 @@
                     </div>
                 </div>
                 <!-- WIDGET GOOGLE -->
-
                 <div class="widget uib_w_27 maps-size d-margins" data-uib="media/google_maps" data-ver="0" data-rpath="null" data-zoom="8" data-center-longitude="2.044438" data-center-latitude="41.341927" data-long="2.044438" data-lat="41.341927" data-marker-title="Informática Sant Boi"
                 data-animate-marker="bounce"></div>
             </div>
+        </div>
+        <div class="upage vertical-col left hidden fondoGeneral" id="registro">
+            <!-- CODI SLIDEBAR -->
+            <div class="inner-element uib_w_10 uib_sidebar leftbar bar-bg thumb-bg bar-gutter swipe" data-uib="layout/left_sidebar" data-ver="1" data-anim="{'style':'overlap', 'v':255, 'side':'left', 'dur':200}" id="sbTiendas">
+                <div class="sidebar-content content-area vertical-col">
+
+                    <div class="btn-group uib-bs-flex widget uib_w_12 d-margins btn-group-vertical" data-uib="twitter%20bootstrap/button_group" data-ver="1">
+                        <button class="btn widget uib_w_13 vertical-group btn-default ButtonStyle" data-uib="twitter%20bootstrap/button" data-ver="1" id="bPt">Principal</button>
+                        <button class="btn widget uib_w_7 vertical-group ButtonStyle btn-default" data-uib="twitter%20bootstrap/button" data-ver="1" id="bTp">Tiendas</button>
+                        <button class="btn widget uib_w_8 vertical-group ButtonStyle btn-default" data-uib="twitter%20bootstrap/button" data-ver="1" id="bPp">Promos</button>
+                    </div>
+                    <span class="widget uib_w_16 d-margins empresaSlider badge" data-uib="twitter%20bootstrap/badge_and_label" data-ver="1">D&amp;J Soft.</span>
+                </div>
+            </div>
+            <!-- Codi navbar -->
+            <div role="navigation" class="navbar navbar-default full-width-widget widget uib_w_3 d-margins" data-uib="twitter%20bootstrap/navbar" data-ver="1">
+                <span><button class="btn widget uib_w_4 d-margins navStyleButton btn-danger" data-uib="twitter%20bootstrap/button" data-ver="1" id="navB"><i class="fa fa-navicon" data-position="icon only"></i></button></span>
+                <a class="navbar-brand" href="#">Registro</a>
+                <div id="bs-navbar-0" class="navbar-collapse collapse"></div>
+            </div>
+            <script>
+                
+            </script>
         </div>
 
     </body>

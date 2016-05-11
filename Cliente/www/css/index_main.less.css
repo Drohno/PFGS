@@ -498,3 +498,6 @@ label:empty {
     height: 250px;
   }
 }
+.inicioCentro {
+  vertical-align: middle;
+}
