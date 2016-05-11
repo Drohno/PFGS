@@ -286,8 +286,8 @@ body#afui .splt {
 @media all {
   .bar-bg {
     background-color: ;
-    background-image: linear-gradient(top, #e80005 0%, #e80005 0%, #160306 100%, #160306 100%);
-    background-image: -webkit-linear-gradient(top, #e80005 0%, #e80005 0%, #160306 100%, #160306 100%);
+    background-image: linear-gradient(top, #ff00ff 0%, #ff00ff 0%, #160306 100%, #160306 100%);
+    background-image: -webkit-linear-gradient(top, #ff00ff 0%, #ff00ff 0%, #160306 100%, #160306 100%);
     background-position: center center;
     background-repeat: no-repeat;
     background-attachment: scroll;
@@ -427,11 +427,12 @@ label:empty {
   margin: 0;
 }
 .ButtonStyle {
-  background-color: #DF382C;
+  background-color: #B05883;
 }
 .navStyleButton {
   float: right;
   margin: 10px;
+  background-color: #B05883;
 }
 .vertical-col > .label {
   display: block;
@@ -482,7 +483,7 @@ label:empty {
 }
 @media all {
   .fondoGeneral {
-    background-color: #ffa2a2;
+    background-color: #ffffff;
     background-position: center center;
     background-repeat: no-repeat;
     background-attachment: fixed;
@@ -500,4 +501,17 @@ label:empty {
 }
 .inicioCentro {
   vertical-align: middle;
+}
+@media all {
+  .navbarBackground {
+    background-color: #f400ee;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+  }
+}
+@media all {
+  .navbarText a {
+    color: #ffffff !important;
+  }
 }
