@@ -153,32 +153,16 @@
 
 
         /* button  #bPp */
-    $(document).on("click", "#bPp", function(evt)
-    {
-         /*global activate_page */
-         activate_page("#registro");
-    });
+
 
         /* button  #bPp */
-    $(document).on("click", "#bPp", function(evt)
-    {
-         /*global activate_page */
-         activate_page("#registro");
-    });
+
 
         /* button  #bPp */
-    $(document).on("click", "#bPp", function(evt)
-    {
-         /*global activate_page */
-         activate_page("#registro");
-    });
+
 
         /* button  #bPp */
-    $(document).on("click", "#bPp", function(evt)
-    {
-         /*global activate_page */
-         activate_page("#registro");
-    });
+
 
         /* listitem  Informática Sant Boi */
     $(document).on("click", ".uib_w_20", function(evt)
@@ -199,6 +183,75 @@
           See js/sidebar.js for the full sidebar API */
 
          uib_sb.toggle_sidebar($("#sbRegistro"));
+    });
+
+        /* button  #bPp */
+
+
+        /* button  #bPr */
+    $(document).on("click", "#bPr", function(evt)
+    {
+         /*global activate_page */
+         activate_page("#registro");
+    });
+
+        /* button  #bPp */
+
+
+        /* button  #bPp */
+    $(document).on("click", "#bPp", function(evt)
+    {
+         /*global activate_page */
+         activate_page("#promos");
+    });
+
+        /* button  #bPr */
+    $(document).on("click", "#bPr", function(evt)
+    {
+         /*global activate_page */
+         activate_page("#registro");
+    });
+
+        /* button  #bPp */
+    $(document).on("click", "#bPp", function(evt)
+    {
+         /*global activate_page */
+         activate_page("#promos");
+    });
+
+        /* button  #bPr */
+    $(document).on("click", "#bPr", function(evt)
+    {
+         /*global activate_page */
+         activate_page("#registro");
+    });
+
+        /* button  #bPp */
+    $(document).on("click", "#bPp", function(evt)
+    {
+         /*global activate_page */
+         activate_page("#promos");
+    });
+
+        /* button  #bPr */
+    $(document).on("click", "#bPr", function(evt)
+    {
+         /*global activate_page */
+         activate_page("#registro");
+    });
+
+        /* button  #bPp */
+    $(document).on("click", "#bPp", function(evt)
+    {
+         /*global activate_page */
+         activate_page("#promos");
+    });
+
+        /* button  #bPr */
+    $(document).on("click", "#bPr", function(evt)
+    {
+         /*global activate_page */
+         activate_page("#registro");
     });
 
     }
