@@ -254,6 +254,16 @@
          activate_page("#registro");
     });
 
+
+        /* button  #enviar */
+    $(document).on("click", "#enviar", function(evt)
+    {
+       alert($(document).getElementById('email').toString);
+        var url = 'http://10.42.0.154/appservice.php';
+        var email = $(document).getElementById('email');
+        //$.post()
+    });
+
     }
  document.addEventListener("app.Ready", register_event_handlers, false);
 })();

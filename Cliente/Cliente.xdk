@@ -6,7 +6,7 @@
       "projectTypeName": "com.intel.xdk.projecttype.jsapp",
       "src": "jsapp/template-blank-cordova-ad-project/sample.zip",
       "projectGuid": "b384d701-d406-4b4b-87ec-78f4198c5c01",
-      "lastModifiedDate": 1462903078092,
+      "lastModifiedDate": 1462988762324,
       "creationDate": 1462379172914
     },
     "XDK-app-designer": "true",
@@ -73,7 +73,7 @@
           "android-installLocation": "preferExternal",
           "android-signed": true,
           "Orientation": "portrait",
-          "Fullscreen": true
+          "Fullscreen": false
         },
         "isActive_": true,
         "appName_": "Sant Boi Comercial",

@@ -480,7 +480,6 @@ label:empty {
 .fondoAbacus {
   color: #484848 !important;
   background-color: orange;
-  margin: 5px;
 }
 @media all {
   .fondoGeneral {
@@ -549,4 +548,10 @@ label:empty {
   .urow.cright > .col-0_12-12 {
     padding-left: 0px !important;
   }
+}
+.fondoFormulario {
+  padding: 5px;
+  margin: 5px;
+  background-color: orange;
+  border-radius: 10px;
 }
