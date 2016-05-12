@@ -95,18 +95,33 @@
                 </div>
                 <!--Codi listview -->
                 <div class="list-group widget uib_w_17 d-margins sombreadoGeneral" data-uib="twitter%20bootstrap/list_group" data-ver="1">
-                    <a class="list-group-item allow-badge widget uib_w_18" data-uib="twitter%20bootstrap/list_item" data-ver="1">
+                    <!-- ESQUELETO NUEVA ENTRADA (RECUERDA LUEGO EN LOS TRIGGERS DEL LISTVIEW LINKEAR LA ENTRADA CON LA SUBPAGE DEL NEGOCIO)
+                    <a class="list-group-item allow-badge widget" data-uib="twitter%20bootstrap/list_item" data-ver="1">
+                        <h4 class="list-group-item-heading">NOMBRE NEGOCIO</h4>
+                        <p class="list-group-item-text">SERVICIOS EN GENERAL QUE OFRECE  (SON COMO TAGS)</p>
+                    </a>
+                    -->
+                    <a class="list-group-item allow-badge widget uib_w_26" data-uib="twitter%20bootstrap/list_item" data-ver="1">
                         <h4 class="list-group-item-heading">20cm studio</h4>
                         <p class="list-group-item-text">Fotografía e Informática</p>
                     </a>
-                    <a class="list-group-item allow-badge widget uib_w_19" data-uib="twitter%20bootstrap/list_item" data-ver="1">
+                    <a class="list-group-item allow-badge widget uib_w_25" data-uib="twitter%20bootstrap/list_item" data-ver="1">
                         <h4 class="list-group-item-heading">Abacus</h4>
                         <p class="list-group-item-text">Librerías, papelerías</p>
                     </a>
-                    <a class="list-group-item allow-badge widget uib_w_20" data-uib="twitter%20bootstrap/list_item" data-ver="1">
-                        <h4 class="list-group-item-heading"> Informática Sant Boi</h4>
+                    <a class="list-group-item allow-badge widget uib_w_27" data-uib="twitter%20bootstrap/list_item" data-ver="1">
+                        <h4 class="list-group-item-heading">Informática Sant Boi</h4>
                         <p class="list-group-item-text">Informática</p>
                     </a>
+                    <a class="list-group-item allow-badge widget uib_w_34" data-uib="twitter%20bootstrap/list_item" data-ver="1">
+                        <h4 class="list-group-item-heading">Centre Quiromassatge Mª Teresa Castanera</h4>
+                        <p class="list-group-item-text">Centre de Quiromassatge</p>
+                    </a>
+                    <a class="list-group-item allow-badge widget uib_w_35" data-uib="twitter%20bootstrap/list_item" data-ver="1">
+                        <h4 class="list-group-item-heading">El Fogon de Sant Boi</h4>
+                        <p class="list-group-item-text">Restaurante</p>
+                    </a>
+
                 </div>
                 <!-- CODI SLIDEBAR -->
                 <div class="inner-element uib_w_10 uib_sidebar leftbar bar-bg thumb-bg bar-gutter swipe" data-uib="layout/left_sidebar" data-ver="1" data-anim="{'style':'overlap', 'v':255, 'side':'left', 'dur':200}" id="sbTiendas">
@@ -166,7 +181,7 @@
                 <div id="bs-navbar-0" class="navbar-collapse collapse"></div>
             </div>
             <!-- PARA VER JS, ir a index_user_scripts.js -->
-            <form id="form_registro" action="http://192.168.130.104/appservice.php" method="post">
+            <form id="form_registro" action="http://192.168.137.183/appservice.php" method="post">
                 <div class="col uib_col_1 col-0_12-12 sombreadoGeneral fondoFormulario" data-uib="layout/col" data-ver="0">
                     <div class="widget-container content-area vertical-col">
                         <div class="table-thing widget uib_w_29 d-margins" data-uib="twitter%20bootstrap/input" data-ver="1">
@@ -192,9 +207,9 @@
                             <input type="hidden" name="codasoc" value="4">
                         </div>
                         <div style="text-align:center; border-radius: 10px;">
-                            <input type="submit" value="Enviar" >
+                            <input type="submit" value="Enviar">
                         </div>
-                        
+
                     </div>
                 </div>
                 <span class="uib_shim"></span>
@@ -215,16 +230,57 @@
                     <span class="widget uib_w_16 d-margins empresaSlider badge" data-uib="twitter%20bootstrap/badge_and_label" data-ver="1">D&amp;J Soft.</span>
                 </div>
             </div>
+            <!-- ESQUELETO NUEVA TIENDA
+            <!-- NOMBRE NEGOCIO
+            <div id="NOMBRESUBPAGE" class="upage-content vertical-col left hidden">
+                <!-- Codi navbar
+                <div role="navigation" class="navbar navbar-default full-width-widget widget d-margins navbarBackground navbarText sombreadoGeneral" data-uib="twitter%20bootstrap/navbar" data-ver="1">
+                    <span><button class="btn widget d-margins navStyleButton btn-default" data-uib="twitter%20bootstrap/button" data-ver="1" id="navB"><i class="fa fa-navicon" data-position="icon only"></i></button></span>
+                    <a class="navbar-brand" href="#">NOMBRE NEGOCIO</a>
+                    <div id="bs-navbar-0" class="navbar-collapse collapse"></div>
+                </div>
+                <!-- IMAGEN EMPRESA
+                <div class="widget scale-image d-margins sombreadoGeneral" data-uib="media/img" data-ver="0">
+                    <figure class="figure-align">
+                        <img src="SOURCE IMAGEN NEGOCIO">
+                        <figcaption data-position="bottom"></figcaption>
+                    </figure>
+                </div>
+                <!-- DESCRIPCIÓN COMERCIO
+                <div class="tarea widget d-margins texto-tiendas sombreadoGeneral" data-uib="media/text" data-ver="0">
+                    <div class="widget-container left-receptacle"></div>
+                    <div class="widget-container right-receptacle"></div>
+                    <div class="text-container">
+                        <p><strong>Sector: </strong>TIPO SECTOR</p>
+
+                        <p><strong>Categoría: </strong>TIPO CATEGORÍA</p>
+
+                        <p><strong>Contacto: </strong><a href="mailto:correoElectronico">infoQquieresQseVea</a>
+                        </p>
+
+                        <p><strong>Teléfono: </strong><a href="tel:+34NUMTELEFONO">TELEFONO</a>
+                        </p>
+
+                        <p><strong><a href="WEBSITE NEGOCIO">Website</a></strong>
+                        </p>
+                    </div>
+                </div>
+                <!-- WIDGET GOOGLE (OJO, SE TIENE QUE INTRODUCIR GRÁFICAMENTE DE 0 PQ SINO DA ERRORES)
+                <div class="widget uib_w_40 maps-size d-margins sombreadoGeneral" data-uib="media/google_maps" data-ver="0" data-rpath="null" data-zoom="8" data-animate-marker="bounce" data-long="2.042486" data-center-longitude="2.042486" data-lat="41.347448" data-center-latitude="41.347448"></div>
+            </div>
+            -->
+
+
             <!--TIENDA 20CM Studio -->
             <div id="a20cmstudio" class="upage-content vertical-col left ">
                 <!-- Codi navbar -->
-                <div role="navigation" class="navbar navbar-default full-width-widget widget uib_w_3 d-margins navbarBackground navbarText sombreadoGeneral" data-uib="twitter%20bootstrap/navbar" data-ver="1">
-                    <span><button class="btn widget uib_w_4 d-margins navStyleButton btn-default" data-uib="twitter%20bootstrap/button" data-ver="1" id="navB"><i class="fa fa-navicon" data-position="icon only"></i></button></span>
-                    <a class="navbar-brand" href="#">20 cm studio</a>
+                <div role="navigation" class="navbar navbar-default full-width-widget widget uib_w_26 d-margins navbarBackground navbarText sombreadoGeneral" data-uib="twitter%20bootstrap/navbar" data-ver="1">
+                    <span><button class="btn widget uib_w_26 d-margins navStyleButton btn-default" data-uib="twitter%20bootstrap/button" data-ver="1" id="navB"><i class="fa fa-navicon" data-position="icon only"></i></button></span>
+                    <a class="navbar-brand" href="#">20 CM STUDIO</a>
                     <div id="bs-navbar-0" class="navbar-collapse collapse"></div>
                 </div>
                 <!-- IMAGEN EMPRESA -->
-                <div class="widget uib_w_22 scale-image d-margins sombreadoGeneral" data-uib="media/img" data-ver="0">
+                <div class="widget uib_w_26 scale-image d-margins sombreadoGeneral" data-uib="media/img" data-ver="0">
                     <figure class="figure-align">
                         <img src="http://estaticos.qdq.com/swdata/logos/2/0/20cm-studio-barcelona.png">
 
@@ -232,7 +288,7 @@
                     </figure>
                 </div>
                 <!-- DESCRIPCIÓN COMERCIO -->
-                <div class="tarea widget uib_w_21 d-margins texto-tiendas sombreadoGeneral" data-uib="media/text" data-ver="0" name="uib_w_21">
+                <div class="tarea widget uib_w_26 d-margins texto-tiendas sombreadoGeneral" data-uib="media/text" data-ver="0" name="uib_w_226">
                     <div class="widget-container left-receptacle"></div>
                     <div class="widget-container right-receptacle"></div>
                     <div class="text-container">
@@ -240,27 +296,28 @@
 
                         <p><strong>Categoría: </strong>Fotografía e Informática</p>
 
-                        <p><strong>Contacto: </strong>marc@20cmstudio.com</p>
+                        <p><strong>Contacto: </strong><a href="mailto:marc@20cmstudio.com">marc@20cmstudio.com</a>
+                        </p>
 
                         <p><strong><a href="http://www.20cm.com.es">Website</a></strong>
                         </p>
 
                     </div>
                 </div>
+                <div class="widget uib_w_36 maps-size d-margins sombreadoGeneral" data-uib="media/google_maps" data-ver="0" data-rpath="null" data-zoom="8" data-long="2.034499" data-center-longitude="2.034499" data-lat="41.349257" data-center-latitude="41.349257" data-animate-marker="bounce"></div>
                 <!-- WIDGET GOOGLE -->
-                <div class="widget uib_w_26 maps-size d-margins sombreadoGeneral" data-uib="media/google_maps" data-ver="0" data-rpath="null" data-zoom="8" data-center-longitude="2.034504" data-center-latitude="41.349262" data-long="2.034504" data-lat="41.349262" data-marker-title="20 CM STUDIO"
-                data-animate-marker="bounce"></div>
+
             </div>
             <!-- TIENDA ABACUS -->
             <div id="abacus" class="upage-content vertical-col left hidden">
                 <!-- Codi navbar -->
-                <div role="navigation" class="navbar navbar-default full-width-widget widget uib_w_3 d-margins navbarBackground navbarText sombreadoGeneral" data-uib="twitter%20bootstrap/navbar" data-ver="1">
-                    <span><button class="btn widget uib_w_4 d-margins navStyleButton btn-default" data-uib="twitter%20bootstrap/button" data-ver="1" id="navB"><i class="fa fa-navicon" data-position="icon only"></i></button></span>
+                <div role="navigation" class="navbar navbar-default full-width-widget widget uib_w_25 d-margins navbarBackground navbarText sombreadoGeneral" data-uib="twitter%20bootstrap/navbar" data-ver="1">
+                    <span><button class="btn widget uib_w_25 d-margins navStyleButton btn-default" data-uib="twitter%20bootstrap/button" data-ver="1" id="navB"><i class="fa fa-navicon" data-position="icon only"></i></button></span>
                     <a class="navbar-brand" href="#">Abacus</a>
                     <div id="bs-navbar-0" class="navbar-collapse collapse"></div>
                 </div>
                 <!-- IMAGEN EMPRESA -->
-                <div class="widget uib_w_22 scale-image d-margins fondoAbacus sombreadoGeneral" data-uib="media/img" data-ver="0">
+                <div class="widget uib_w_25 scale-image d-margins fondoAbacus sombreadoGeneral" data-uib="media/img" data-ver="0">
                     <figure class="figure-align">
                         <img src="http://abacus.coop/wp-content/uploads/2013/07/logo_Abacus11.png">
 
@@ -268,7 +325,7 @@
                     </figure>
                 </div>
                 <!-- DESCRIPCIÓN COMERCIO -->
-                <div class="tarea widget uib_w_21 d-margins texto-tiendas sombreadoGeneral" data-uib="media/text" data-ver="0" name="uib_w_21">
+                <div class="tarea widget uib_w_25 d-margins texto-tiendas sombreadoGeneral" data-uib="media/text" data-ver="0" name="uib_w_25">
                     <div class="widget-container left-receptacle"></div>
                     <div class="widget-container right-receptacle"></div>
                     <div class="text-container">
@@ -276,26 +333,31 @@
 
                         <p><strong>Categoría: </strong>Librerías, papelerías</p>
 
-                        <p><strong>Contacto: </strong>stboi@abacus.coop</p>
+                        <p><strong>Contacto: </strong><a href="mailto:stboi@abacus.coop">stboi@abacus.coop</a>
+                        </p>
+
+                        <p><strong>Teléfono: </strong>
+                            <a href="tel:+34"></a>
+                        </p>
 
                         <p><strong><a href="http://abacus.coop/es/locations/abacus-sant-boi-de-llobregat/">Website</a></strong>
                         </p>
                     </div>
                 </div>
                 <!-- WIDGET GOOGLE -->
-                <div class="widget uib_w_25 maps-size d-margins sombreadoGeneral" data-uib="media/google_maps" data-ver="0" data-rpath="null" data-zoom="8" data-center-latitude="41.340814" data-center-longitude="2.043419" data-long="2.043419" data-lat="41.340814" data-marker-title="Abacus"
-                data-animate-marker="bounce"></div>
+
+                <div class="widget uib_w_37 maps-size d-margins sombreadoGeneral" data-uib="media/google_maps" data-ver="0" data-rpath="null" data-zoom="8" data-long="2.043408" data-center-longitude="2.043408" data-lat="41.340789" data-center-latitude="41.340789" data-animate-marker="bounce"></div>
             </div>
             <!-- TIENDA INFORMÁTICA SANT BOI -->
             <div id="informaticastboi" class="upage-content vertical-col left hidden">
                 <!-- Codi navbar -->
-                <div role="navigation" class="navbar navbar-default full-width-widget widget uib_w_3 d-margins navbarBackground navbarText sombreadoGeneral" data-uib="twitter%20bootstrap/navbar" data-ver="1">
-                    <span><button class="btn widget uib_w_4 d-margins navStyleButton btn-default" data-uib="twitter%20bootstrap/button" data-ver="1" id="navB"><i class="fa fa-navicon" data-position="icon only"></i></button></span>
+                <div role="navigation" class="navbar navbar-default full-width-widget widget uib_w_27 d-margins navbarBackground navbarText sombreadoGeneral" data-uib="twitter%20bootstrap/navbar" data-ver="1">
+                    <span><button class="btn widget uib_w_27 d-margins navStyleButton btn-default" data-uib="twitter%20bootstrap/button" data-ver="1" id="navB"><i class="fa fa-navicon" data-position="icon only"></i></button></span>
                     <a class="navbar-brand" href="#">Informática Sant Boi</a>
                     <div id="bs-navbar-0" class="navbar-collapse collapse"></div>
                 </div>
                 <!-- IMAGEN EMPRESA -->
-                <div class="widget uib_w_22 scale-image d-margins sombreadoGeneral" data-uib="media/img" data-ver="0">
+                <div class="widget uib_w_27 scale-image d-margins sombreadoGeneral" data-uib="media/img" data-ver="0">
                     <figure class="figure-align">
                         <img src="http://www.informaticasantboi.es/web/wp-content/uploads/2013/09/Logo-Informatica-Sant-Boi1.png">
 
@@ -303,7 +365,7 @@
                     </figure>
                 </div>
                 <!-- DESCRIPCIÓN COMERCIO -->
-                <div class="tarea widget uib_w_21 d-margins texto-tiendas sombreadoGeneral" data-uib="media/text" data-ver="0" name="uib_w_21">
+                <div class="tarea widget uib_w_27 d-margins texto-tiendas sombreadoGeneral" data-uib="media/text" data-ver="0" name="uib_w_27">
                     <div class="widget-container left-receptacle"></div>
                     <div class="widget-container right-receptacle"></div>
                     <div class="text-container">
@@ -311,16 +373,92 @@
 
                         <p><strong>Categoría: </strong>Informática</p>
 
-                        <p><strong>Contacto: </strong>info@informaticasantboi.es</p>
+                        <p><strong>Contacto: </strong><a href="mailto:info@informaticasantboi.es">info@informaticasantboi.es</a>
+                        </p>
+
+                        <p><strong>Teléfono: </strong><a href="tel:+34936612616">936 612 616</a>
+                        </p>
 
                         <p><strong><a href="http://www.informaticasantboi.es/">Website</a></strong>
+                        </p>
+
+                        <p><strong>Horario:</strong>
+                        </p>
+
+                        <p>De Lunes a Viernes de 11 a 14H y de 17 a 20H</p>
+
+                        <p>Sábados Cerrados</p>
+                    </div>
+                </div>
+                <!-- WIDGET GOOGLE -->
+
+                <div class="widget uib_w_38 maps-size d-margins sombreadoGeneral" data-uib="media/google_maps" data-ver="0" data-rpath="null" data-zoom="8" data-lat="41.341927" data-center-latitude="41.341927" data-long="2.044438" data-center-longitude="2.044438" data-animate-marker="bounce"></div>
+            </div>
+            <!-- Centre Quiromatge Mª Teresa Castanera -->
+            <div id="quiroteresa" class="upage-content vertical-col left hidden">
+                <!-- Codi navbar -->
+                <div role="navigation" class="navbar navbar-default full-width-widget widget uib_w_34 d-margins navbarBackground navbarText sombreadoGeneral" data-uib="twitter%20bootstrap/navbar" data-ver="1">
+                    <span><button class="btn widget uib_w_34 d-margins navStyleButton btn-default" data-uib="twitter%20bootstrap/button" data-ver="1" id="navB"><i class="fa fa-navicon" data-position="icon only"></i></button></span>
+                    <span><a class="navbar-brand" href="#">Centre Quiromassatge</a>
+                    <a class="navbar-brand" href="#">Mª Teresa Castanera</a></span>
+                    <div id="bs-navbar-0" class="navbar-collapse collapse"></div>
+                </div>
+                <!-- DESCRIPCIÓN COMERCIO -->
+                <div class="tarea widget uib_w_34 d-margins texto-tiendas sombreadoGeneral" data-uib="media/text" data-ver="0" name="uib_w_34">
+                    <div class="widget-container left-receptacle"></div>
+                    <div class="widget-container right-receptacle"></div>
+                    <div class="text-container">
+                        <p><strong>Sector: </strong>Cura Personal</p>
+
+                        <p><strong>Categoría: </strong>Centro de Quiromasaje</p>
+
+                        <p><strong>Teléfono: </strong><a href="tel:+34936547242">936 547 242</a>
                         </p>
                     </div>
                 </div>
                 <!-- WIDGET GOOGLE -->
-                <div class="widget uib_w_27 maps-size d-margins sombreadoGeneral" data-uib="media/google_maps" data-ver="0" data-rpath="null" data-zoom="8" data-center-longitude="2.044438" data-center-latitude="41.341927" data-long="2.044438" data-lat="41.341927" data-marker-title="Informática Sant Boi"
-                data-animate-marker="bounce"></div>
+
+                <div class="widget uib_w_39 maps-size d-margins sombreadoGeneral" data-uib="media/google_maps" data-ver="0" data-rpath="null" data-zoom="8" data-animate-marker="bounce" data-long="2.042013" data-center-longitude="2.042013" data-lat="41.348401" data-center-latitude="41.348401"></div>
+            </div>
+            <!-- FOGON SANT BOI -->
+            <div id="fogonstboi" class="upage-content vertical-col left hidden">
+                <!-- Codi navbar -->
+                <div role="navigation" class="navbar navbar-default full-width-widget widget uib_w_35 d-margins navbarBackground navbarText sombreadoGeneral" data-uib="twitter%20bootstrap/navbar" data-ver="1">
+                    <span><button class="btn widget uib_w_35 d-margins navStyleButton btn-default" data-uib="twitter%20bootstrap/button" data-ver="1" id="navB"><i class="fa fa-navicon" data-position="icon only"></i></button></span>
+                    <a class="navbar-brand" href="#">El Fogón Sant Boi</a>
+                    <div id="bs-navbar-0" class="navbar-collapse collapse"></div>
+                </div>
+                <!-- IMAGEN EMPRESA -->
+                <div class="widget uib_w_35 scale-image d-margins sombreadoGeneral" data-uib="media/img" data-ver="0">
+                    <figure class="figure-align">
+                        <img src="http://www.elfogondesantboi.es/images/logo.png">
+                        <figcaption data-position="bottom"></figcaption>
+                    </figure>
+                </div>
+                <!-- DESCRIPCIÓN COMERCIO -->
+                <div class="tarea widget uib_w_35 d-margins texto-tiendas sombreadoGeneral" data-uib="media/text" data-ver="0" name="uib_w_35">
+                    <div class="widget-container left-receptacle"></div>
+                    <div class="widget-container right-receptacle"></div>
+                    <div class="text-container">
+                        <p><strong>Sector: </strong>Restauración</p>
+
+                        <p><strong>Categoría: </strong>Restaurante</p>
+
+                        <p><strong>Contacto: </strong><a href="mailto:restauranteelfogon@hotmail.com">restauranteelfogon@hotmail.com</a>
+                        </p>
+
+                        <p><strong>Teléfono: </strong><a href="tel:+34936542344">936 542 344</a>
+                        </p>
+
+                        <p><strong><a href="http://www.elfogondesantboi.es/">Website</a></strong>
+                        </p>
+                    </div>
+                </div>
+                <!-- WIDGET GOOGLE -->
+
+                <div class="widget uib_w_40 maps-size d-margins sombreadoGeneral" data-uib="media/google_maps" data-ver="0" data-rpath="null" data-zoom="8" data-animate-marker="bounce" data-long="2.042486" data-center-longitude="2.042486" data-lat="41.347448" data-center-latitude="41.347448"></div>
             </div>
         </div>
     </body>
+
 </html>

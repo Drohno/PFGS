@@ -253,12 +253,68 @@
          /*global activate_page */
          activate_page("#registro");
     });
-
-     $('#form_registro').submit(function() {
-        alert("funciona again");
-        return false;
-     });
+    $('#form_registro').submit(function(){
+       $.getJSON({
+          url: $('#form_registro').attr('action'),
+          success: function(){
+            alert('Recibido');
+          }
+       });
+    });
      
+        /* listitem  .uib_w_21 */
+
+
+        /* listitem  El Fogon de Sant Boi */
+
+
+        /* listitem  .uib_w_21 */
+
+
+        /* listitem  El Fogon de Sant Boi */
+    $(document).on("click", ".uib_w_21", function(evt)
+    {
+         /*global activate_subpage */
+         activate_subpage("#fogonstboi");
+    });
+
+        /* listitem  Fotografía e Informática */
+
+
+        /* listitem  Fotografía e Informática */
+    $(document).on("click", ".uib_w_26", function(evt)
+    {
+         /*global activate_subpage */
+         activate_subpage("#a20cmstudio");
+    });
+
+        /* listitem  Librerías, papelerías */
+    $(document).on("click", ".uib_w_25", function(evt)
+    {
+         /*global activate_subpage */
+         activate_subpage("#abacus");
+    });
+
+        /* listitem  Informática Sant Boi */
+    $(document).on("click", ".uib_w_27", function(evt)
+    {
+         /*global activate_subpage */
+         activate_subpage("#informaticastboi");
+    });
+
+        /* listitem  .uib_w_34 */
+    $(document).on("click", ".uib_w_34", function(evt)
+    {
+         /*global activate_subpage */
+         activate_subpage("#quiroteresa");
+    });
+
+        /* listitem  El Fogon de Sant Boi */
+    $(document).on("click", ".uib_w_35", function(evt)
+    {
+         /*global activate_subpage */
+         activate_subpage("#fogonstboi");
+    });
 
     }
  document.addEventListener("app.Ready", register_event_handlers, false);
