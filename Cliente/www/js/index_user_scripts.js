@@ -253,14 +253,6 @@
          /*global activate_page */
          activate_page("#registro");
     });
-    $('#form_registro').submit(function(){
-       $.getJSON({
-          url: $('#form_registro').attr('action'),
-          success: function(){
-            alert('Recibido');
-          }
-       });
-    });
      
         /* listitem  .uib_w_21 */
 
@@ -316,6 +308,34 @@
          activate_subpage("#fogonstboi");
     });
 
+        /* button  #register */
+    $(document).on("click", "#register", function(evt)
+    {
+        var postData = $(this).serialize();
+        $.ajax({
+                type:'POST',
+                url:'http://appserv.hol.es/appservice.php',
+                data: $("#form_registro").serialize(),
+                dataType: 'text',
+                success: function (data) {
+                    activate_page("#postregistro");
+                    //alert('conexion establecida');
+                    //var obj = JSON.parse(data);
+                    //alert(obj.resultat[1]);
+                },
+                error: function(xhr, textStatus, errorThrown, data){
+                    console.log("xhr.status: " + xhr.status);
+                    console.log("xhr.statusText: " + xhr.statusText);
+                    console.log("xhr.readyState: " + xhr.readyState);
+                    console.log("xhr.responseText: " + xhr.responseText);
+                    console.log("errorThrown: " + errorThrown);
+                    //alert(JSON.stringify(data));
+                    
+                }
+            });
+        evt.preventDefault();   
+    });
+    
     }
  document.addEventListener("app.Ready", register_event_handlers, false);
 })();
