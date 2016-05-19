@@ -316,9 +316,26 @@
                 type:'POST',
                 url:'http://appserv.hol.es/appservice.php',
                 data: $("#form_registro").serialize(),
-                dataType: 'text',
+                dataType: 'json',
                 success: function (data) {
-                    alert("Registrado correctamente")
+                    if(data.resultat.localeCompare("ok") == 0){
+                        alert("Correctamente registrado");
+                        //GUARDAR DATOS DEL FORMULARIO EN EL LOCALSTORAGE
+                        localStorage.setItem("email",jQuery('input[name="email"]').val());
+                        //alert(localStorage.getItem("email"));
+                        localStorage.setItem("nom",jQuery('input[name="nom"]').val());
+                        //alert(localStorage.getItem("nom"));
+                        localStorage.setItem("ape",jQuery('input[name="ape"]').val());
+                        //alert(localStorage.getItem("ape"));
+                    }else{
+                        var fallo = data.error;
+                        fallo = fallo.match(/Duplicate entry/i);
+                        if(fallo[0].localeCompare("Duplicate entry") == 0){
+                            alert("Ya se ha registrado ese email");
+                        }else{
+                            alert("Error de conexión con el servidor");
+                        }
+                    }
                 },
                 error: function(xhr, textStatus, errorThrown, data){
                     console.log("xhr.status: " + xhr.status);
@@ -326,7 +343,6 @@
                     console.log("xhr.readyState: " + xhr.readyState);
                     console.log("xhr.responseText: " + xhr.responseText);
                     console.log("errorThrown: " + errorThrown);
-                    alert(xhr.responseText);
                     
                 }
             });
