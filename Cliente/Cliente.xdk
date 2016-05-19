@@ -6,7 +6,7 @@
       "projectTypeName": "com.intel.xdk.projecttype.jsapp",
       "src": "jsapp/template-blank-cordova-ad-project/sample.zip",
       "projectGuid": "b384d701-d406-4b4b-87ec-78f4198c5c01",
-      "lastModifiedDate": 1463156447064,
+      "lastModifiedDate": 1463672787665,
       "creationDate": 1462379172914
     },
     "XDK-app-designer": "true",
@@ -25,11 +25,42 @@
     "libraries": [],
     "serviceMethods": [],
     "cordovaPluginsDirectory": "plugins",
-    "cordovaPlugins": [],
+    "cordovaPlugins": [
+      {
+        "id": "phonegap-plugin-push",
+        "name": "PushPlugin",
+        "version": "1.6.3",
+        "originType": "local",
+        "origin": "/C/Users/David/Desktop/PFGS/push-notification-phonegap",
+        "gitref": "",
+        "paramvals": {
+          "SENDER_ID": "443647167733"
+        },
+        "sourceLocation": "plugins/phonegap-plugin-push",
+        "selectedState": "Included",
+        "checksum": "694ee6e7",
+        "dependsOn": [],
+        "topLevel": true,
+        "cordovaVersion": ">=3.6.3",
+        "permissions": {
+          "android:name": [
+            "android.permission.INTERNET",
+            "android.permission.ACCESS_NETWORK_STATE",
+            "android.permission.WAKE_LOCK",
+            "android.permission.VIBRATE",
+            "com.google.android.c2dm.permission.RECEIVE",
+            "${applicationId}.permission.C2D_MESSAGE"
+          ]
+        },
+        "description": "\n\t\tThis plugin allows your application to receive push notifications on Android, iOS and Windows devices.\n    Android uses Google Cloud Messaging.\n    iOS uses Apple APNS Notifications.\n    Windows uses Microsoft WNS Notifications.\n\t",
+        "data": {},
+        "dependedBy": []
+      }
+    ],
     "buildConfigurations": {
       "Android": {
         "platform_": "android",
-        "runtime_": "Cordova 3.x",
+        "runtime_": "Crosswalk with Cordova 3.x",
         "name_": "Android",
         "preferences_": {
           "android-minSdkVersion": "14",
@@ -64,7 +95,7 @@
         "excludedLibraries_": "",
         "certificateId_": "oHTV6Mb2Vk69kpaHnp0cZA2",
         "cordovaCLIVersion_": "5.4.1",
-        "crosswalkVersion_": "shared",
+        "crosswalkVersion_": "16",
         "appVersion_": "0.0.5",
         "appAuthor_": "D&J Soft.",
         "appDescription_": "Aplicación de Asociación de Comercios Locales  de Sant Boi de Llobregat",

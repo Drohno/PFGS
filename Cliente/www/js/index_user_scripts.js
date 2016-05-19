@@ -318,10 +318,7 @@
                 data: $("#form_registro").serialize(),
                 dataType: 'text',
                 success: function (data) {
-                    activate_page("#postregistro");
-                    //alert('conexion establecida');
-                    //var obj = JSON.parse(data);
-                    //alert(obj.resultat[1]);
+                    alert("Registrado correctamente")
                 },
                 error: function(xhr, textStatus, errorThrown, data){
                     console.log("xhr.status: " + xhr.status);
@@ -329,7 +326,7 @@
                     console.log("xhr.readyState: " + xhr.readyState);
                     console.log("xhr.responseText: " + xhr.responseText);
                     console.log("errorThrown: " + errorThrown);
-                    //alert(JSON.stringify(data));
+                    alert(xhr.responseText);
                     
                 }
             });
