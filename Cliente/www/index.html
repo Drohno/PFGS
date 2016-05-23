@@ -1,9 +1,5 @@
 <!DOCTYPE html>
 <html>
-    <!--
-  * Please see the included README.md file for license terms and conditions.
-  -->
-
     <head>
         <link rel="stylesheet" type="text/css" href="galleria/galleria.classic.css">
         <link rel="stylesheet" type="text/css" href="icon-fonts/elusive-icons-2.0.0/css/elusive-icons.css">
@@ -52,7 +48,6 @@
         <script type="application/javascript" src="http://api-maps.yandex.ru/2.0-stable/?load=package.standard,package.geoObjects&amp;lang=en-US"></script>
         <script type="application/javascript" src="yandex_maps/yandex_maps.js"></script>
     </head>
-
     <body>
         <!-- CODI INICIO-->
         <div class="upage fondoGeneral" id="mainpage">
@@ -82,17 +77,17 @@
                     <figcaption data-position="bottom"></figcaption>
                 </figure>
             </div>
+            <script>
+                var aux = localStorage.getItem("registrado") || "false";
+                if(aux.localeCompare("false") == 0){
+                    document.getElementById("bPr").style.display = 'block';
+                    document.getElementById("bPc").style.display = 'none';
+                }else{
+                     document.getElementById("bPr").style.display = 'none';
+                     document.getElementById("bPc").style.display = 'block';
+                }
+            </script>
         </div>
-        <script>
-            var aux = localStorage.getItem("registrado") || "false";
-                            if(aux.localeCompare("false") == 0){
-                                document.getElementById("bPr").style.display = 'block';
-                                document.getElementById("bPc").style.display = 'none';
-                            }else{
-                                 document.getElementById("bPr").style.display = 'none';
-                                 document.getElementById("bPc").style.display = 'block';
-                            }
-        </script>
         <!-- CODI TIENDAS -->
         <div class="upage hidden fondoGeneral" id="tiendas">
             <div class="upage-outer">
@@ -149,18 +144,17 @@
                 </div>
 
             </div>
-
+            <script>
+                var aux = localStorage.getItem("registrado") || "false";
+                if(aux.localeCompare("false") == 0){
+                    document.getElementById("bPr").style.display = 'block';
+                    document.getElementById("bPc").style.display = 'none';
+                }else{
+                     document.getElementById("bPr").style.display = 'none';
+                     document.getElementById("bPc").style.display = 'block';
+                }
+            </script>
         </div>
-        <script>
-            var aux = localStorage.getItem("registrado") || "false";
-                    if(aux.localeCompare("false") == 0){
-                        document.getElementById("bPr").style.display = 'block';
-                        document.getElementById("bPc").style.display = 'none';
-                    }else{
-                         document.getElementById("bPr").style.display = 'none';
-                         document.getElementById("bPc").style.display = 'block';
-                    }
-        </script>
         <!-- CODI PROMOS -->
         <div class="upage vertical-col left hidden fondoGeneral" id="promos">
             <!-- CODI SLIDEBAR -->
@@ -181,6 +175,16 @@
                 <a class="navbar-brand" href="#">Promos</a>
                 <div id="bs-navbar-0" class="navbar-collapse collapse"></div>
             </div>
+            <script>
+                var aux = localStorage.getItem("registrado") || "false";
+                if(aux.localeCompare("false") == 0){
+                    document.getElementById("bPr").style.display = 'block';
+                    document.getElementById("bPc").style.display = 'none';
+                }else{
+                     document.getElementById("bPr").style.display = 'none';
+                     document.getElementById("bPc").style.display = 'block';
+                }
+            </script>
         </div>
         <!--  CODI  REGISTRO -->
         <div class="upage vertical-col left hidden fondoGeneral" id="registro">
@@ -228,7 +232,6 @@
                         <div>
                             <input type="hidden" name="codasoc" value="3">
                         </div>
-
                     </div>
                 </div>
             </form>
@@ -294,6 +297,16 @@
                     <span class="widget uib_w_16 d-margins empresaSlider badge" data-uib="twitter%20bootstrap/badge_and_label" data-ver="1">D&amp;J Soft.</span>
                 </div>
             </div>
+            <script>
+                var aux = localStorage.getItem("registrado") || "false";
+                if(aux.localeCompare("false") == 0){
+                    document.getElementById("bPr").style.display = 'block';
+                    document.getElementById("bPc").style.display = 'none';
+                }else{
+                     document.getElementById("bPr").style.display = 'none';
+                     document.getElementById("bPc").style.display = 'block';
+                }
+            </script>
             <!-- ESQUELETO NUEVA TIENDA
             <!-- NOMBRE NEGOCIO
             <div id="NOMBRESUBPAGE" class="upage-content vertical-col left hidden">
@@ -567,5 +580,4 @@
             </div>
         </div>
     </body>
-
 </html>
