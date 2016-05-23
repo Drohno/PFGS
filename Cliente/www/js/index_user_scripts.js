@@ -5,22 +5,15 @@
  /*
    hook up event handlers
  */
- function register_event_handlers()
+
+function register_event_handlers()
  {
 
 
-     /* button  .uib_w_2 */
-    $(document).on("click", ".uib_w_2", function(evt)
-    {
-         /*global uib_sb */
-         /* Other possible functions are:
-           uib_sb.open_sidebar($sb)
-           uib_sb.close_sidebar($sb)
-           uib_sb.toggle_sidebar($sb)
-            uib_sb.close_all_sidebars()
-          See js/sidebar.js for the full sidebar API */
-
-         uib_sb.toggle_sidebar($("#sidebar"));
+    /* button  #navBPrinci */
+    $(document).on("click", "#navBPrinci", function(evt)
+    {    
+        uib_sb.toggle_sidebar($("#sbPrin"));            
     });
 
         /* button  Button */
@@ -43,20 +36,7 @@
          uib_sb.toggle_sidebar($(".uib_w_10"));
     });
 
-        /* button  #navBPrinci */
-    $(document).on("click", "#navBPrinci", function(evt)
-    {
-         /*global uib_sb */
-         /* Other possible functions are:
-           uib_sb.open_sidebar($sb)
-           uib_sb.close_sidebar($sb)
-           uib_sb.toggle_sidebar($sb)
-            uib_sb.close_all_sidebars()
-          See js/sidebar.js for the full sidebar API */
-
-         uib_sb.toggle_sidebar($("#sbPrin"));
-    });
-
+        
         /* button  Botigues */
 
 
@@ -306,12 +286,11 @@
     {
          /*global activate_subpage */
          activate_subpage("#fogonstboi");
-    });
+    })
 
         /* button  #register */
     $(document).on("click", "#register", function(evt)
     {
-        var postData = $(this).serialize();
         $.ajax({
                 type:'POST',
                 url:'http://appserv.hol.es/appservice.php',
@@ -320,13 +299,13 @@
                 success: function (data) {
                     if(data.resultat.localeCompare("ok") == 0){
                         alert("Correctamente registrado");
-                        //GUARDAR DATOS DEL FORMULARIO EN EL LOCALSTORAGE
-                        localStorage.setItem("email",jQuery('input[name="email"]').val());
-                        //alert(localStorage.getItem("email"));
-                        localStorage.setItem("nom",jQuery('input[name="nom"]').val());
-                        //alert(localStorage.getItem("nom"));
+                        //GUARDAR DATOS DEL FORMULARIO EN EL LOCALSTORAGE Y PONEMOS REGISTRADO A TRUE
+                        localStorage.setItem("email",jQuery('input[name="email"]').val());   
+                        localStorage.setItem("nom",jQuery('input[name="nom"]').val());                        
                         localStorage.setItem("ape",jQuery('input[name="ape"]').val());
-                        //alert(localStorage.getItem("ape"));
+                        localStorage.setItem("edad",jQuery('input[name="edad"]').val());
+                        localStorage.setItem("registrado","true");
+                        
                     }else{
                         var fallo = data.error;
                         fallo = fallo.match(/Duplicate entry/i);
@@ -347,6 +326,27 @@
                 }
             });
         evt.preventDefault();   
+    });
+    
+        /* button  #bPc */
+    $(document).on("click", "#bPc", function(evt)
+    {
+         /*global activate_page */
+         activate_page("#cuenta"); 
+    });
+    
+        /* button  #navBCuenta */
+    $(document).on("click", "#navBCuenta", function(evt)
+    {
+         /*global uib_sb */
+         /* Other possible functions are: 
+           uib_sb.open_sidebar($sb)
+           uib_sb.close_sidebar($sb)
+           uib_sb.toggle_sidebar($sb)
+            uib_sb.close_all_sidebars()
+          See js/sidebar.js for the full sidebar API */
+        
+         uib_sb.toggle_sidebar($("#sbCuenta"));  
     });
     
     }

@@ -59,7 +59,7 @@
             <!-- Codi del sidebar -->
             <div class="inner-element uib_w_1 uib_sidebar leftbar bar-bg thumb-bg bar-gutter swipe" data-uib="layout/left_sidebar" data-ver="1" data-anim="{'style':'overlap', 'v':255, 'side':'left', 'dur':200}" id="sbPrin">
                 <div class="sidebar-content content-area vertical-col">
-
+                        <button class="btn widget uib_w_8 vertical-group ButtonStyle btn-default" data-uib="twitter%20bootstrap/button" data-ver="1" id="bPc">Cuenta</button>
                     <div class="btn-group uib-bs-flex widget uib_w_6 d-margins btn-group-vertical" data-uib="twitter%20bootstrap/button_group" data-ver="1">
                         <button class="btn widget uib_w_13 vertical-group ButtonStyle btn-default" data-uib="twitter%20bootstrap/button" data-ver="1" id="bPt">Principal</button>
                         <button class="btn widget uib_w_7 vertical-group ButtonStyle btn-default" data-uib="twitter%20bootstrap/button" data-ver="1" id="bTp">Tiendas</button>
@@ -83,6 +83,16 @@
                 </figure>
             </div>
         </div>
+        <script>
+            var aux = localStorage.getItem("registrado") || "false";
+                            if(aux.localeCompare("false") == 0){
+                                document.getElementById("bPr").style.display = 'block';
+                                document.getElementById("bPc").style.display = 'none';
+                            }else{
+                                 document.getElementById("bPr").style.display = 'none';
+                                 document.getElementById("bPc").style.display = 'block';
+                            }
+        </script>
         <!-- CODI TIENDAS -->
         <div class="upage hidden fondoGeneral" id="tiendas">
             <div class="upage-outer">
@@ -132,12 +142,25 @@
                             <button class="btn widget uib_w_7 vertical-group ButtonStyle btn-default" data-uib="twitter%20bootstrap/button" data-ver="1" id="bTp">Tiendas</button>
                             <button class="btn widget uib_w_8 vertical-group ButtonStyle btn-default" data-uib="twitter%20bootstrap/button" data-ver="1" id="bPp">Promos</button>
                             <button class="btn widget uib_w_8 vertical-group ButtonStyle btn-default" data-uib="twitter%20bootstrap/button" data-ver="1" id="bPr">Registro</button>
+                            <button class="btn widget uib_w_8 vertical-group ButtonStyle btn-default" data-uib="twitter%20bootstrap/button" data-ver="1" id="bPc">Cuenta</button>
                         </div>
                         <span class="widget uib_w_16 d-margins empresaSlider badge" data-uib="twitter%20bootstrap/badge_and_label" data-ver="1">D&amp;J Soft.</span>
                     </div>
                 </div>
+
             </div>
+
         </div>
+        <script>
+            var aux = localStorage.getItem("registrado") || "false";
+                    if(aux.localeCompare("false") == 0){
+                        document.getElementById("bPr").style.display = 'block';
+                        document.getElementById("bPc").style.display = 'none';
+                    }else{
+                         document.getElementById("bPr").style.display = 'none';
+                         document.getElementById("bPc").style.display = 'block';
+                    }
+        </script>
         <!-- CODI PROMOS -->
         <div class="upage vertical-col left hidden fondoGeneral" id="promos">
             <!-- CODI SLIDEBAR -->
@@ -185,19 +208,19 @@
                     <div class="widget-container content-area vertical-col">
                         <div class="table-thing widget uib_w_29 d-margins" data-uib="twitter%20bootstrap/input" data-ver="1">
                             <label class="narrow-control label-top-left">email</label>
-                            <input required name="email" class="wide-control form-control default" type="email" placeholder="correo@ejemplo.com">
+                            <input name="email" class="wide-control form-control default" type="email" placeholder="correo@ejemplo.com">
                         </div>
                         <div class="table-thing widget uib_w_28 d-margins" data-uib="twitter%20bootstrap/input" data-ver="1">
                             <label class="narrow-control label-top-left">Nombre</label>
-                            <input required name="nom" class="wide-control form-control default" type="text" placeholder="Su nombre aquí">
+                            <input name="nom" class="wide-control form-control default" type="text" placeholder="Su nombre aquí">
                         </div>
                         <div class="table-thing widget uib_w_30 d-margins" data-uib="twitter%20bootstrap/input" data-ver="1">
                             <label class="narrow-control label-top-left">Apellidos</label>
-                            <input required name="ape" class="wide-control form-control default" type="text" placeholder="Sus apellidos aquí">
+                            <input name="ape" class="wide-control form-control default" type="text" placeholder="Sus apellidos aquí">
                         </div>
                         <div class="table-thing widget uib_w_31 d-margins" data-uib="twitter%20bootstrap/input" data-ver="1">
                             <label class="narrow-control label-top-left">Edad</label>
-                            <input required value="0" name="edad" class="wide-control form-control default" type="number" placeholder="Introduzca su edad aquí">
+                            <input value="0" name="edad" class="wide-control form-control default" type="number" placeholder="Introduzca su edad aquí">
                         </div>
                         <div>
                             <input type="hidden" name="pushtoken" value="dat123">
@@ -211,27 +234,50 @@
             </form>
             <button class="btn widget uib_w_41 d-margins sombreadoGeneral btn-default" data-uib="twitter%20bootstrap/button" data-ver="1" id="register">Registrarse</button>
         </div>
-        <!--  CODI  POST-REGISTRO -->
-        <div class="upage vertical-col left hidden fondoGeneral" id="postregistro">
-            <!-- CODI SLIDEBAR -->
-            <div class="inner-element postregist uib_sidebar leftbar bar-bg thumb-bg bar-gutter swipe" data-uib="layout/left_sidebar" data-ver="1" data-anim="{'style':'overlap', 'v':255, 'side':'left', 'dur':200}" id="sbPostRegistro">
+        <!-- CODI CUENTA -->
+        <div class="upage vertical-col left hidden" id="cuenta">
+            <!-- Codi del sidebar -->
+            <div class="inner-element uib_sidebar leftbar bar-bg thumb-bg bar-gutter swipe" data-uib="layout/left_sidebar" data-ver="1" data-anim="{'style':'overlap', 'v':255, 'side':'left', 'dur':200}" id="sbCuenta">
                 <div class="sidebar-content content-area vertical-col">
-                    <div class="btn-group uib-bs-flex widget postregist d-margins btn-group-vertical" data-uib="twitter%20bootstrap/button_group" data-ver="1">
-                        <button class="btn widget uib_w_13 vertical-group btn-default ButtonStyle" data-uib="twitter%20bootstrap/button" data-ver="1" id="bPt">Principal</button>
+                    <div class="btn-group uib-bs-flex widget uib_w_6 d-margins btn-group-vertical" data-uib="twitter%20bootstrap/button_group" data-ver="1">
+                        <button class="btn widget uib_w_13 vertical-group ButtonStyle btn-default" data-uib="twitter%20bootstrap/button" data-ver="1" id="bPt">Principal</button>
                         <button class="btn widget uib_w_7 vertical-group ButtonStyle btn-default" data-uib="twitter%20bootstrap/button" data-ver="1" id="bTp">Tiendas</button>
                         <button class="btn widget uib_w_8 vertical-group ButtonStyle btn-default" data-uib="twitter%20bootstrap/button" data-ver="1" id="bPp">Promos</button>
-                        <button class="btn widget uib_w_8 vertical-group ButtonStyle btn-default" data-uib="twitter%20bootstrap/button" data-ver="1" id="bPr">Registro</button>
+                        <button class="btn widget uib_w_8 vertical-group ButtonStyle btn-default" data-uib="twitter%20bootstrap/button" data-ver="1" id="bPc">Cuenta</button>
                     </div>
                     <span class="widget uib_w_16 d-margins empresaSlider badge" data-uib="twitter%20bootstrap/badge_and_label" data-ver="1">D&amp;J Soft.</span>
                 </div>
             </div>
             <!-- Codi navbar -->
-            <div role="navigation" class="navbar navbar-default full-width-widget widget postregist d-margins navbarBackground navbarText sombreadoGeneral" data-uib="twitter%20bootstrap/navbar" data-ver="1">
-                <span><button class="btn widget postregist d-margins navStyleButton btn-default" data-uib="twitter%20bootstrap/button" data-ver="1" id="navRegistro"><i class="fa fa-navicon" data-position="icon only"></i></button></span>
-
+            <div role="navigation" class="navbar navbar-default full-width-widget widget d-margins navbarBackground navbarText sombreadoGeneral" data-uib="twitter%20bootstrap/navbar" data-ver="1">
+                <span><button class="btn widget d-margins navStyleButton btn-default" data-uib="twitter%20bootstrap/button" data-ver="1" id="navBCuenta"><i class="fa fa-navicon" data-position="icon only"></i></button></span>
+                <a class="navbar-brand" href="#">Cuenta</a>
                 <div id="bs-navbar-0" class="navbar-collapse collapse"></div>
             </div>
+            <div class="tarea widget uib_w_42 d-margins" data-uib="media/text" data-ver="0" name="uib_w_42">
+                <div class="widget-container left-receptacle"></div>
+                <div class="widget-container right-receptacle"></div>
+                <div class="text-container">
+                    <p><strong>email: </strong></p><p id="em"></p>
 
+                    <p><strong>nombre: </strong>
+                    </p>
+                    <p id="nm"></p>
+
+                    <p><strong>apellidos: </strong>
+                    </p>
+                    <p id="ap"></p>
+                    <p><strong>edad: </strong>
+                    </p>
+                    <p id="ed"></p>
+                </div>
+                <script>
+                    document.getElementById("em").innerHTML = localStorage.getItem("email");
+                    document.getElementById("nm").innerHTML = localStorage.getItem("nom");
+                    document.getElementById("ap").innerHTML = localStorage.getItem("ape");
+                    document.getElementById("ed").innerHTML = localStorage.getItem("edad");
+                </script>
+            </div>
         </div>
         <!-- CODI PROPIO TIENDAS -->
         <div class="upage vertical-col left hidden fondoGeneral" id="interface_tienda">
