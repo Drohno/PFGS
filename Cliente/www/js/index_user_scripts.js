@@ -275,19 +275,7 @@ function register_event_handlers()
     
     
         /* button  #navBCuenta */
-    $(document).on("click", "#navBCuenta", function(evt)
-    {
-         /*global uib_sb */
-         /* Other possible functions are: 
-           uib_sb.open_sidebar($sb)
-           uib_sb.close_sidebar($sb)
-           uib_sb.toggle_sidebar($sb)
-            uib_sb.close_all_sidebars()
-          See js/sidebar.js for the full sidebar API */
-        
-         uib_sb.toggle_sidebar($("#sbCuenta"));  
-         return false;
-    });
+    
     
         /* button  #navBtiendas */
     $(document).on("click", "#navBtiendas", function(evt)
@@ -341,19 +329,10 @@ function register_event_handlers()
     
     
         /* button  #ACuenta */
-    $(document).on("click", "#ACuenta", function(evt)
-    {
-         /*global activate_page */
-         activate_page("#cuenta"); 
-    });
+    
     
         /* button  #ARegistro */
-    $(document).on("click", "#ARegistro", function(evt)
-    {
-         /*global activate_page */
-         activate_page("#registro"); 
-         return false;
-    });
+    
     
         /* button  #navBpromos */
     $(document).on("click", "#navBpromos", function(evt)
@@ -371,19 +350,7 @@ function register_event_handlers()
     });
     
         /* button  #navRegistro */
-    $(document).on("click", "#navRegistro", function(evt)
-    {
-         /*global uib_sb */
-         /* Other possible functions are: 
-           uib_sb.open_sidebar($sb)
-           uib_sb.close_sidebar($sb)
-           uib_sb.toggle_sidebar($sb)
-            uib_sb.close_all_sidebars()
-          See js/sidebar.js for the full sidebar API */
-        
-         uib_sb.toggle_sidebar($("#sbRegistro"));  
-         return false;
-    });
+    
      
      
     /* PUSH NOTIFICATIONS */
@@ -428,11 +395,11 @@ function register_event_handlers()
     //Comprobamos que el dispositivo esta listo para pedir el id a GCM
     document.addEventListener("deviceready", function(){
         pushNotification = window.plugins.pushNotification;
-        window.alert("Device Ready");
+        window.console.log("Device Ready");
         
         window.plugins.pushNotification.unregister(successHandler, errorHandler);
-        window.alert("Unregistered");
-        alert(device.platform);
+        window.console.log("Unregistered");
+        //alert(device.platform);
         if ( device.platform == 'android' || device.platform == 'Android' || device.platform == "amazon-fireos" ){
             try {
                 pushNotification.register(
@@ -441,7 +408,7 @@ function register_event_handlers()
             {
                 txt="There was an error on this page.\n\n";
                 txt+="Error description: " + err.message + "\n\n";
-                window.alert(txt);
+                window.console.log(txt);
             }
         }
     }, false);
@@ -459,12 +426,12 @@ function register_event_handlers()
         /* button  #register */
     $(document).on("click", "#register", function(evt)
     {
-      var email = $("#email").val();
-        alert(email);
+      var email = $("#correo").val();
+        //alert(email);
       var nom = $("#nom").val();
-        alert(nom);
+        //alert(nom);
       var ape = $("#ape").val();
-        alert(ape);
+        //alert(ape);
       //validaciones antes de registrar
       if (validateEmail(email)) {
           if (nom !== ""){
@@ -485,7 +452,7 @@ function register_event_handlers()
                                 localStorage.setItem("edad",$("#edad").val());
                                 localStorage.setItem("registrado","true");
                                 activate_page("#mainpage");
-                                location.reload(true);
+                                location.reload();
                             }else{
                                 var fallo = data.error;
                                 fallo = fallo.match(/Duplicate entry/i);
@@ -502,7 +469,8 @@ function register_event_handlers()
                             window.console.log("xhr.readyState: " + xhr.readyState);
                             window.console.log("xhr.responseText: " + xhr.responseText);
                             window.console.log("errorThrown: " + errorThrown);
-                            window.alert(xhr.responseText); 
+                            //window.alert(xhr.responseText); 
+                            window.alert("Error de conexión con el servidor");
                         }
                     });
                 evt.preventDefault();
@@ -515,6 +483,107 @@ function register_event_handlers()
       } else {
           window.alert("Indique su email correctamente");
       }
+         return false;
+    });
+    
+        /* button  Button */
+    $(document).on("click", ".uib_w_43", function(evt)
+    {
+        localStorage.setItem("email","");
+        localStorage.setItem("nom","");
+        localStorage.setItem("ape","");
+        localStorage.setItem("edad","");
+        localStorage.setItem("registrado","false");
+        alert("Sesión cerrada")
+        activate_page("#mainpage");
+        location.reload();
+         return false;
+    });
+    
+        /* button  #ALogin */
+    
+    
+        /* button  #login */
+    $(document).on("click", "#login", function(evt)
+    {
+        /* CÓDIGO QUE EJECUTARÁ AL LOGEARSE */
+        activate_page("#mainpage");
+        location.reload();
+         return false;
+    });
+    
+        /* button  #navRegistro */
+    
+    
+        /* button  #navRegistro */
+    
+    
+        /* button  #navBCuenta */
+    $(document).on("click", "#navBCuenta", function(evt)
+    {
+         /*global uib_sb */
+         /* Other possible functions are: 
+           uib_sb.open_sidebar($sb)
+           uib_sb.close_sidebar($sb)
+           uib_sb.toggle_sidebar($sb)
+            uib_sb.close_all_sidebars()
+          See js/sidebar.js for the full sidebar API */
+        
+         uib_sb.toggle_sidebar($("#sbCuenta"));  
+         return false;
+    });
+    
+        /* button  #ARegistro */
+    $(document).on("click", "#ARegistro", function(evt)
+    {
+         /*global activate_page */
+         activate_page("#registro"); 
+         return false;
+    });
+    
+        /* button  #ACuenta */
+    $(document).on("click", "#ACuenta", function(evt)
+    {
+         /*global activate_page */
+         activate_page("#cuenta"); 
+         return false;
+    });
+    
+        /* button  #ALogin */
+    $(document).on("click", "#ALogin", function(evt)
+    {
+         /*global activate_page */
+         activate_page("#login"); 
+         return false;
+    });
+    
+        /* button  #navRegistro */
+    $(document).on("click", "#navRegistro", function(evt)
+    {
+         /*global uib_sb */
+         /* Other possible functions are: 
+           uib_sb.open_sidebar($sb)
+           uib_sb.close_sidebar($sb)
+           uib_sb.toggle_sidebar($sb)
+            uib_sb.close_all_sidebars()
+          See js/sidebar.js for the full sidebar API */
+        
+         uib_sb.toggle_sidebar($("#sbRegistro"));  
+         return false;
+    });
+    
+        /* button  #navLogin */
+    $(document).on("click", "#navLogin", function(evt)
+    {
+         /*global uib_sb */
+         /* Other possible functions are: 
+           uib_sb.open_sidebar($sb)
+           uib_sb.close_sidebar($sb)
+           uib_sb.toggle_sidebar($sb)
+            uib_sb.close_all_sidebars()
+          See js/sidebar.js for the full sidebar API */
+        
+         uib_sb.toggle_sidebar($("#sbLogin"));  
          return false;
     });
     
