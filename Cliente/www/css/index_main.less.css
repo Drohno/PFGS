@@ -567,3 +567,21 @@ label:empty {
     margin-top: 100px;
   }
 }
+@media all {
+  .wrapping-col > .boton-cuenta-registro,
+  .wrapping-col > .afScrollPanel > .boton-cuenta-registro {
+    margin-left: 6px;
+    margin-right: 6px;
+  }
+  .wrapping-col > .boton-cuenta-registro,
+  .wrapping-col > .afScrollPanel > .boton-cuenta-registro {
+    margin-left: 6px;
+    margin-right: 6px;
+  }
+  .boton-cuenta-registro {
+    margin-top: 10px;
+  }
+}
+.red {
+  background-color: #FF0505;
+}
