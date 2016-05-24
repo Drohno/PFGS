@@ -232,52 +232,9 @@ function register_event_handlers()
     {
          /*global activate_subpage */
          activate_subpage("#fogonstboi");
-    })
-
-        /* button  #register */
-    $(document).on("click", "#register", function(evt)
-    {   
-        $.ajax({
-                type:'POST',
-                url:'http://appserv.hol.es/appservice.php',
-                data: $("#form_registro").serialize(),
-                dataType: 'json',
-                success: function (data) {
-                    if(data.resultat.localeCompare("ok") == 0){
-                        alert("Correctamente registrado");
-                        //GUARDAR DATOS DEL FORMULARIO EN EL LOCALSTORAGE Y PONEMOS REGISTRADO A TRUE
-                        localStorage.setItem("email",jQuery('input[name="email"]').val());   
-                        localStorage.setItem("nom",jQuery('input[name="nom"]').val());                        
-                        localStorage.setItem("ape",jQuery('input[name="ape"]').val());
-                        localStorage.setItem("edad",jQuery('input[name="edad"]').val());
-                        localStorage.setItem("registrado","true");
-                        activate_page("#mainpage");
-                        location.reload(true);
-                        
-                    }else{
-                        var fallo = data.error;
-                        fallo = fallo.match(/Duplicate entry/i);
-                        if(fallo[0].localeCompare("Duplicate entry") == 0){
-                            alert("Ya se ha registrado ese email");
-                        }else{
-                            alert("Error de conexión con el servidor");
-                        }
-                    }
-                },
-                error: function(xhr, textStatus, errorThrown, data){
-                    console.log("xhr.status: " + xhr.status);
-                    console.log("xhr.statusText: " + xhr.statusText);
-                    console.log("xhr.readyState: " + xhr.readyState);
-                    console.log("xhr.responseText: " + xhr.responseText);
-                    console.log("errorThrown: " + errorThrown);
-                    alert("No se ha podido conectar con el servidor")
-                    activate_page("#mainpage");
-                }
-            });
-        evt.preventDefault();   
     });
-    
-        /* button  #bPc */
+     
+      /* button  #bPc */
     $(document).on("click", "#bPc", function(evt)
     {
          /*global activate_page */
@@ -425,6 +382,121 @@ function register_event_handlers()
           See js/sidebar.js for the full sidebar API */
         
          uib_sb.toggle_sidebar($("#sbRegistro"));  
+         return false;
+    });
+     
+     
+    /* PUSH NOTIFICATIONS */
+     
+    var pushNotification;
+    var regID;
+     
+    function successHandler (result) {
+        window.alert('result = ' + result);
+    }
+    
+    function errorHandler (error) {
+        window.alert('error = ' + error);
+    }
+     
+    window.onNotificationGCM = function(e) {
+        switch( e.event )
+        {
+            case 'registered':
+                if ( e.regid.length > 0 )
+                {
+                    window.console.log('REGISTERED -> REGID:' + e.regid );
+                    $(function () {
+                        //introducimos token en el sitio correspondiente del form
+                      $('#pushtoken').val(e.regid);
+                      window.alert("token guardado en formulario");
+                    });
+                }
+                break;
+            case 'message':
+                window.console.log('gcm: on message ');
+                break;
+
+            case 'error':
+                window.console.log( "gcm error: "+e.msg );
+                break;
+            default:
+                break;
+        }
+    };
+    var txt;
+    //Comprobamos que el dispositivo esta listo para pedir el id a GCM
+    document.addEventListener("deviceready", function(){
+        pushNotification = window.plugins.pushNotification;
+        window.alert("Device Ready");
+        
+        window.plugins.pushNotification.unregister(successHandler, errorHandler);
+        window.alert("Unregistered");
+        if ( device.platform == 'android' || device.platform == 'Android' || device.platform == "amazon-fireos" ){
+            try {
+                pushNotification.register(
+                    successHandler, errorHandler, { "senderID":"443647167733", "ecb":"window.onNotificationGCM" });
+            } catch(err)
+            {
+                txt="There was an error on this page.\n\n";
+                txt+="Error description: " + err.message + "\n\n";
+                window.alert(txt);
+            }
+        }
+    }, false);
+     
+     /* FIN PUSH NOTIFICATIONS */
+      
+    
+    /* button  #register */
+    
+    
+        /* button  #register */
+    $(document).on("click", "#register", function(evt)
+    {
+      var email = $("#email").val();
+      alert(email);
+      var nom = $("#nom").val();
+      alert(nom);
+      var ape = $("#ape").val();
+      alert(ape);
+      //validaciones antes de registrar
+      if (validateEmail(email)) {
+          if (nom !== ""){
+              if(ape !== ""){
+                //Registro de usuario en BBDD
+                $.ajax({
+                        type:'POST',
+                        url:'http://www.appserv.hol.es/appservice.php',
+                        data: $("#formulario").serialize(),
+                        dataType: 'text',
+                        success: function (data) {
+                            window.alert('conexion establecida');
+                            localStorage.setItem("email",email);
+                            localStorage.setItem("nom",nom);
+                            localStorage.setItem("ape",ape);
+                            localStorage.setItem("edad",jQuery('input[name="edad"]').val());
+                            localStorage.setItem("registrado","true");
+                        },
+                        error: function(xhr, textStatus, errorThrown, data){
+                            window.console.log("xhr.status: " + xhr.status);
+                            window.console.log("xhr.statusText: " + xhr.statusText);
+                            window.console.log("xhr.readyState: " + xhr.readyState);
+                            window.console.log("xhr.responseText: " + xhr.responseText);
+                            window.console.log("errorThrown: " + errorThrown);
+                            window.alert(xhr.responseText);                            
+                        }
+                    });
+                evt.preventDefault();
+              } else {
+                  window.alert("Indique su apellido");
+              }
+          } else {
+              window.alert("Indique su nombre");
+          }
+      } else {
+          window.alert("Indique su email correctamente");
+      }
          return false;
     });
     

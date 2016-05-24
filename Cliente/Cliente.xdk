@@ -6,7 +6,7 @@
       "projectTypeName": "com.intel.xdk.projecttype.jsapp",
       "src": "jsapp/template-blank-cordova-ad-project/sample.zip",
       "projectGuid": "b384d701-d406-4b4b-87ec-78f4198c5c01",
-      "lastModifiedDate": 1464109140434,
+      "lastModifiedDate": 1464112134737,
       "creationDate": 1462379172914
     },
     "XDK-app-designer": "true",
@@ -25,7 +25,40 @@
     "libraries": [],
     "serviceMethods": [],
     "cordovaPluginsDirectory": "plugins",
-    "cordovaPlugins": [],
+    "cordovaPlugins": [
+      {
+        "id": "com.phonegap.plugins.PushPlugin",
+        "name": "PushPlugin",
+        "version": "2.5.0",
+        "originType": "local",
+        "origin": "/C/Users/David/Desktop/com.phonegap.plugins.PushPlugin",
+        "gitref": "",
+        "paramvals": {},
+        "sourceLocation": "plugins/com.phonegap.plugins.PushPlugin",
+        "selectedState": "Included",
+        "checksum": "75197821",
+        "dependsOn": [],
+        "topLevel": true,
+        "cordovaVersion": ">=3.0.0",
+        "author": "Bob Easterday",
+        "permissions": {
+          "android:name": [
+            "android.permission.ACCESS_NETWORK_STATE",
+            "android.permission.GET_ACCOUNTS",
+            "android.permission.WAKE_LOCK",
+            "android.permission.VIBRATE",
+            "com.google.android.c2dm.permission.RECEIVE",
+            "$PACKAGE_NAME.permission.C2D_MESSAGE",
+            "$PACKAGE_NAME.permission.RECEIVE_ADM_MESSAGE",
+            "com.amazon.device.messaging.permission.RECEIVE"
+          ]
+        },
+        "description": "\n\t\tThis plugin allows your application to receive push notifications on Android, iOS, WP8 and Windows8 devices.\n    Android uses Google Cloud Messaging.\n    iOS uses Apple APNS Notifications.\n    WP8 uses Microsoft MPNS Notifications.\n    Windows8 uses Microsoft WNS Notifications.\n\t",
+        "data": {},
+        "dependedBy": [],
+        "custom": "true"
+      }
+    ],
     "buildConfigurations": {
       "Android": {
         "platform_": "android",

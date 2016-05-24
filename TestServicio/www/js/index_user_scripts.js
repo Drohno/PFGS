@@ -97,8 +97,7 @@
                             window.console.log("xhr.readyState: " + xhr.readyState);
                             window.console.log("xhr.responseText: " + xhr.responseText);
                             window.console.log("errorThrown: " + errorThrown);
-                            window.alert(xhr.responseText);
-                            
+                            window.alert(xhr.responseText);                            
                         }
                     });
                 evt.preventDefault();
