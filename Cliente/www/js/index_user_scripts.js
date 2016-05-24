@@ -270,7 +270,8 @@ function register_event_handlers()
                     console.log("xhr.readyState: " + xhr.readyState);
                     console.log("xhr.responseText: " + xhr.responseText);
                     console.log("errorThrown: " + errorThrown);
-                    
+                    alert("No se ha podido conectar con el servidor")
+                    activate_page("#mainpage");
                 }
             });
         evt.preventDefault();   
