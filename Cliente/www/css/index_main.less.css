@@ -330,12 +330,12 @@ body#afui .splt {
   .vertical-col > .d-margins,
   .vertical-col > .afScrollPanel > .d-margins {
     margin-left: 5px;
-    margin-right: 5px;
+    margin-right: 0px;
   }
   .vertical-col > .d-margins,
   .vertical-col > .afScrollPanel > .d-margins {
     margin-left: 5px;
-    margin-right: 5px;
+    margin-right: 0px;
   }
   .d-margins {
     margin-top: 5px;
@@ -523,7 +523,7 @@ label:empty {
     padding-right: 20px;
   }
 }
-@media all and (min-width: 0px) {
+@media all and (min-width: 52px) {
   .row-height-1 > .col > .content-area {
     min-height: 100px;
   }
@@ -554,4 +554,16 @@ label:empty {
   padding: 5px;
   margin: 5px;
   background-color: orange;
+}
+@media all {
+  .text-cuenta p {
+    font-size: 16px;
+    font-family: monospace;
+    text-align: center;
+  }
+}
+@media all {
+  .image-margins {
+    margin-top: 100px;
+  }
 }

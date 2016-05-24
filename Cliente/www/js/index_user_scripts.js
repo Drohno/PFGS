@@ -5,15 +5,15 @@
  /*
    hook up event handlers
  */
-
+    
 function register_event_handlers()
  {
-
-
+     
     /* button  #navBPrinci */
     $(document).on("click", "#navBPrinci", function(evt)
     {    
-        uib_sb.toggle_sidebar($("#sbPrin"));            
+        uib_sb.toggle_sidebar($("#sbPrin")); 
+        
     });
 
         /* button  Button */
@@ -25,15 +25,9 @@ function register_event_handlers()
         /* button  #navBtiendas */
     $(document).on("click", "#navBtiendas", function(evt)
     {
-         /*global uib_sb */
-         /* Other possible functions are:
-           uib_sb.open_sidebar($sb)
-           uib_sb.close_sidebar($sb)
-           uib_sb.toggle_sidebar($sb)
-            uib_sb.close_all_sidebars()
-          See js/sidebar.js for the full sidebar API */
-
-         uib_sb.toggle_sidebar($(".uib_w_10"));
+        registrado();
+        uib_sb.toggle_sidebar($(".uib_w_10"));
+       
     });
 
         
@@ -53,11 +47,7 @@ function register_event_handlers()
 
 
         /* button  #bTp */
-    $(document).on("click", "#bTp", function(evt)
-    {
-         /*global activate_page */
-         activate_page("#tiendas");
-    });
+    
 
         /* button  #bPt */
     $(document).on("click", "#bPt", function(evt)
@@ -69,15 +59,8 @@ function register_event_handlers()
         /* button  #navBpromos */
     $(document).on("click", "#navBpromos", function(evt)
     {
-         /*global uib_sb */
-         /* Other possible functions are:
-           uib_sb.open_sidebar($sb)
-           uib_sb.close_sidebar($sb)
-           uib_sb.toggle_sidebar($sb)
-            uib_sb.close_all_sidebars()
-          See js/sidebar.js for the full sidebar API */
-
-         uib_sb.toggle_sidebar($("#sbpromos"));
+        registrado();
+        uib_sb.toggle_sidebar($("#sbpromos"));
     });
 
         /* button  #bPp */
@@ -95,15 +78,8 @@ function register_event_handlers()
         /* button  #navB */
     $(document).on("click", "#navB", function(evt)
     {
-         /*global uib_sb */
-         /* Other possible functions are:
-           uib_sb.open_sidebar($sb)
-           uib_sb.close_sidebar($sb)
-           uib_sb.toggle_sidebar($sb)
-            uib_sb.close_all_sidebars()
-          See js/sidebar.js for the full sidebar API */
-
-         uib_sb.toggle_sidebar($("#sb"));
+        registrado();
+        uib_sb.toggle_sidebar($("#sb"));
     });
 
         /* listitem  Fotografía e Informática */
@@ -154,15 +130,8 @@ function register_event_handlers()
         /* button  #navRegistro */
     $(document).on("click", "#navRegistro", function(evt)
     {
-         /*global uib_sb */
-         /* Other possible functions are:
-           uib_sb.open_sidebar($sb)
-           uib_sb.close_sidebar($sb)
-           uib_sb.toggle_sidebar($sb)
-            uib_sb.close_all_sidebars()
-          See js/sidebar.js for the full sidebar API */
-
-         uib_sb.toggle_sidebar($("#sbRegistro"));
+        registrado();
+        uib_sb.toggle_sidebar($("#sbRegistro"));
     });
 
         /* button  #bPp */
@@ -234,12 +203,6 @@ function register_event_handlers()
          activate_page("#registro");
     });
      
-        /* listitem  .uib_w_21 */
-
-
-        /* listitem  El Fogon de Sant Boi */
-
-
         /* listitem  .uib_w_21 */
 
 
@@ -338,15 +301,32 @@ function register_event_handlers()
         /* button  #navBCuenta */
     $(document).on("click", "#navBCuenta", function(evt)
     {
-         /*global uib_sb */
-         /* Other possible functions are: 
-           uib_sb.open_sidebar($sb)
-           uib_sb.close_sidebar($sb)
-           uib_sb.toggle_sidebar($sb)
-            uib_sb.close_all_sidebars()
-          See js/sidebar.js for the full sidebar API */
-        
+         registrado();
          uib_sb.toggle_sidebar($("#sbCuenta"));  
+    });
+    
+        /* button  #SliderBarBotonRegistro */
+    
+    
+        /* button  #bTp */
+    $(document).on("click", "#bTp", function(evt)
+    {
+         /*global activate_page */
+         activate_page("#tiendas"); 
+    });
+    
+        /* button  #SliderBarBotonRegistro */
+    $(document).on("click", "#SliderBarBotonRegistro", function(evt)
+    {
+         /*global activate_page */
+         activate_page("#registro"); 
+    });
+    
+        /* button  #SliderBarBotonCuenta */
+    $(document).on("click", "#SliderBarBotonCuenta", function(evt)
+    {
+         /*global activate_page */
+         activate_page("#cuenta"); 
     });
     
     }
