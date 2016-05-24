@@ -392,11 +392,11 @@ function register_event_handlers()
     var regID;
      
     function successHandler (result) {
-        window.alert('result = ' + result);
+        window.console.log('result = ' + result);
     }
     
     function errorHandler (error) {
-        window.alert('error = ' + error);
+        window.console.log('error = ' + error);
     }
      
     window.onNotificationGCM = function(e) {
@@ -409,7 +409,7 @@ function register_event_handlers()
                     $(function () {
                         //introducimos token en el sitio correspondiente del form
                       $('#pushtoken').val(e.regid);
-                      window.alert("token guardado en formulario");
+                      window.console.log("token guardado en formulario");
                     });
                 }
                 break;
@@ -432,6 +432,7 @@ function register_event_handlers()
         
         window.plugins.pushNotification.unregister(successHandler, errorHandler);
         window.alert("Unregistered");
+        alert(device.platform);
         if ( device.platform == 'android' || device.platform == 'Android' || device.platform == "amazon-fireos" ){
             try {
                 pushNotification.register(
@@ -446,7 +447,11 @@ function register_event_handlers()
     }, false);
      
      /* FIN PUSH NOTIFICATIONS */
-      
+    
+    function validateEmail(email) { 
+        var re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+        return re.test(email);
+    }
     
     /* button  #register */
     
@@ -455,11 +460,11 @@ function register_event_handlers()
     $(document).on("click", "#register", function(evt)
     {
       var email = $("#email").val();
-      alert(email);
+        alert(email);
       var nom = $("#nom").val();
-      alert(nom);
+        alert(nom);
       var ape = $("#ape").val();
-      alert(ape);
+        alert(ape);
       //validaciones antes de registrar
       if (validateEmail(email)) {
           if (nom !== ""){
@@ -468,15 +473,28 @@ function register_event_handlers()
                 $.ajax({
                         type:'POST',
                         url:'http://www.appserv.hol.es/appservice.php',
-                        data: $("#formulario").serialize(),
-                        dataType: 'text',
+                        data: $("#form_registro").serialize(),
+                        dataType: 'json',
                         success: function (data) {
-                            window.alert('conexion establecida');
-                            localStorage.setItem("email",email);
-                            localStorage.setItem("nom",nom);
-                            localStorage.setItem("ape",ape);
-                            localStorage.setItem("edad",jQuery('input[name="edad"]').val());
-                            localStorage.setItem("registrado","true");
+                            if(data.resultat.localeCompare("ok") == 0){
+                                alert("Correctamente registrado");
+                                //GUARDAR DATOS DEL FORMULARIO EN EL LOCALSTORAGE
+                                localStorage.setItem("email",email);
+                                localStorage.setItem("nom",nom);
+                                localStorage.setItem("ape",ape);
+                                localStorage.setItem("edad",$("#edad").val());
+                                localStorage.setItem("registrado","true");
+                                activate_page("#mainpage");
+                                location.reload(true);
+                            }else{
+                                var fallo = data.error;
+                                fallo = fallo.match(/Duplicate entry/i);
+                                if(fallo[0].localeCompare("Duplicate entry") == 0){
+                                    alert("Ya se ha registrado ese email");
+                                }else{
+                                    alert("Error de conexión con el servidor");
+                                }
+                            }
                         },
                         error: function(xhr, textStatus, errorThrown, data){
                             window.console.log("xhr.status: " + xhr.status);
@@ -484,7 +502,7 @@ function register_event_handlers()
                             window.console.log("xhr.readyState: " + xhr.readyState);
                             window.console.log("xhr.responseText: " + xhr.responseText);
                             window.console.log("errorThrown: " + errorThrown);
-                            window.alert(xhr.responseText);                            
+                            window.alert(xhr.responseText); 
                         }
                     });
                 evt.preventDefault();
