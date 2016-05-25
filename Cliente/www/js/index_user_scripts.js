@@ -449,7 +449,6 @@ function register_event_handlers()
                                 localStorage.setItem("email",email);
                                 localStorage.setItem("nom",nom);
                                 localStorage.setItem("ape",ape);
-                                localStorage.setItem("edad",$("#edad").val());
                                 localStorage.setItem("registrado","true");
                                 activate_page("#mainpage");
                                 location.reload();
@@ -492,7 +491,6 @@ function register_event_handlers()
         localStorage.setItem("email","");
         localStorage.setItem("nom","");
         localStorage.setItem("ape","");
-        localStorage.setItem("edad","");
         localStorage.setItem("registrado","false");
         alert("Sesión cerrada")
         activate_page("#mainpage");
@@ -504,13 +502,7 @@ function register_event_handlers()
     
     
         /* button  #login */
-    $(document).on("click", "#login", function(evt)
-    {
-        /* CÓDIGO QUE EJECUTARÁ AL LOGEARSE */
-        activate_page("#mainpage");
-        location.reload();
-         return false;
-    });
+    
     
         /* button  #navRegistro */
     
@@ -534,28 +526,13 @@ function register_event_handlers()
     });
     
         /* button  #ARegistro */
-    $(document).on("click", "#ARegistro", function(evt)
-    {
-         /*global activate_page */
-         activate_page("#registro"); 
-         return false;
-    });
+    
     
         /* button  #ACuenta */
-    $(document).on("click", "#ACuenta", function(evt)
-    {
-         /*global activate_page */
-         activate_page("#cuenta"); 
-         return false;
-    });
+    
     
         /* button  #ALogin */
-    $(document).on("click", "#ALogin", function(evt)
-    {
-         /*global activate_page */
-         activate_page("#login"); 
-         return false;
-    });
+    
     
         /* button  #navRegistro */
     $(document).on("click", "#navRegistro", function(evt)
@@ -584,6 +561,75 @@ function register_event_handlers()
           See js/sidebar.js for the full sidebar API */
         
          uib_sb.toggle_sidebar($("#sbLogin"));  
+         return false;
+    });
+    
+        /* button  #ARegistro */
+    
+    
+        /* button  #ACuenta */
+    $(document).on("click", "#ACuenta", function(evt)
+    {
+         /*global activate_page */
+         activate_page("#cuenta"); 
+         return false;
+    });
+    
+        /* button  #ALogin */
+    $(document).on("click", "#ALogin", function(evt)
+    {
+         /*global activate_page */
+         activate_page("#login"); 
+         return false;
+    });
+    
+        /* button  #log */
+    $(document).on("click", "#log", function(evt)
+    {
+        $.ajax({
+            type:'POST',
+            url:'http://www.appserv.hol.es/appservice.php',
+            data: $("#form_login").serialize(),
+            dataType: 'json',
+            success: function (data) {
+                if(data.resultat.localeCompare("ok") == 0){
+                    alert("Correctamente registrado");
+                    //GUARDAR DATOS DEL FORMULARIO EN EL LOCALSTORAGE
+                    localStorage.setItem("email",$("#logemail").val());
+                    localStorage.setItem("nom",data.nom);
+                    localStorage.setItem("ape",data.ape);
+                    localStorage.setItem("registrado","true");
+                    activate_page("#mainpage");
+                    location.reload();
+                }else{
+                    var fallo = data.error;
+                    fallo = fallo.match(/Duplicate entry/i);
+                    if(fallo[0].localeCompare("Duplicate entry") == 0){
+                        alert("Ya se ha registrado ese email");
+                    }else{
+                        alert("Error de conexión con el servidor");
+                    }
+                }
+            },
+            error: function(xhr, textStatus, errorThrown, data){
+                window.console.log("xhr.status: " + xhr.status);
+                window.console.log("xhr.statusText: " + xhr.statusText);
+                window.console.log("xhr.readyState: " + xhr.readyState);
+                window.console.log("xhr.responseText: " + xhr.responseText);
+                window.console.log("errorThrown: " + errorThrown);
+                //window.alert(xhr.responseText); 
+                window.alert("Error de conexión con el servidor");
+            }
+        });
+        evt.preventDefault();
+         return false;
+    });
+    
+        /* button  #ARegistro */
+    $(document).on("click", "#ARegistro", function(evt)
+    {
+         /*global activate_page */
+         activate_page("#registro"); 
          return false;
     });
     

@@ -183,17 +183,17 @@
                 <div id="bs-navbar-0" class="navbar-collapse collapse"></div>
             </div>
             <!-- PARA VER JS, ir a index_user_scripts.js -->
-            <form id="login">
+            <form id="form_login">
                 <div class="col uib_col_1 col-0_12-12 sombreadoGeneral fondoFormulario" data-uib="layout/col" data-ver="0">
                     <div class="widget-container content-area vertical-col">
-                        <div class="table-thing widget uib_w_29 d-margins" data-uib="twitter%20bootstrap/input" data-ver="1">
+                        <div class="table-thing widget d-margins" data-uib="twitter%20bootstrap/input" data-ver="1">
                             <label class="narrow-control label-top-left">email</label>
                             <input name="email" class="wide-control form-control default" type="email" id="logemail " placeholder="correo@ejemplo.com">
                         </div>
                     </div>
                 </div>
             </form>
-            <button class="btn widget d-margins sombreadoGeneral btn-default" data-uib="twitter%20bootstrap/button" data-ver="1" id="login">Login</button>
+            <button class="btn widget d-margins sombreadoGeneral btn-default" data-uib="twitter%20bootstrap/button" data-ver="1" id="log">Login</button>
         </div>
         <!--  CODI  REGISTRO -->
         <div class="upage vertical-col left hidden fondoGeneral" id="registro">
@@ -282,9 +282,6 @@
                     <p><strong>apellidos: </strong>
                     </p>
                     <p id="ap"></p>
-                    <p><strong>edad: </strong>
-                    </p>
-                    <p id="ed"></p>
                 </div>
 
             </div>
@@ -292,9 +289,8 @@
         </div>
         <script>
             document.getElementById("em").innerHTML = localStorage.getItem("email");
-                    document.getElementById("nm").innerHTML = localStorage.getItem("nom");
-                    document.getElementById("ap").innerHTML = localStorage.getItem("ape");
-                    document.getElementById("ed").innerHTML = localStorage.getItem("edad");
+            document.getElementById("nm").innerHTML = localStorage.getItem("nom");
+            document.getElementById("ap").innerHTML = localStorage.getItem("ape");
         </script>
         <!-- CODI PROPIO TIENDAS -->
         <div class="upage vertical-col left hidden fondoGeneral" id="interface_tienda">
