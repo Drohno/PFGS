@@ -377,6 +377,28 @@ function register_event_handlers()
                         //introducimos token en el sitio correspondiente del form
                       $('#pushtoken').val(e.regid);
                       window.console.log("token guardado en formulario");
+                        var aux = localStorage.getItem("registrado")||"false";
+                        if(aux.localeCompare("true")==0){ 
+                            var email = localStorage.getItem("email"); 
+                            $.ajax({
+                                type:'POST',
+                                 /* FALTA PONER NOMBRE SERVICIO */
+                                url:'http://www.appserv.hol.es/NOMBRESERVICIO.php',
+                                data: {token: regID, id: 3, email: email},
+                                dataType: 'json',
+                                success: function (data) {
+                                },
+                                error: function(xhr, textStatus, errorThrown, data){
+                                    window.console.log("xhr.status: " + xhr.status);
+                                    window.console.log("xhr.statusText: " + xhr.statusText);
+                                    window.console.log("xhr.readyState: " + xhr.readyState);
+                                    window.console.log("xhr.responseText: " + xhr.responseText);
+                                    window.console.log("errorThrown: " + errorThrown);
+                                    //window.alert(xhr.responseText); 
+                                }
+                            });
+                            evt.preventDefault();
+                        }
                     });
                 }
                 break;
@@ -521,19 +543,21 @@ function register_event_handlers()
         /* button  #log */
     $(document).on("click", "#log", function(evt)
     {
+        var email = $("#logmail").val();
         $.ajax({
             type:'POST',
-            url:'http://www.appserv.hol.es/appservice.php',
+            url:'http://www.appserv.hol.es/applogin.php',
             data: $("#form_login").serialize(),
             dataType: 'json',
             success: function (data) {
                 if(data.resultat.localeCompare("ok") == 0){
                     //GUARDAR DATOS DEL FORMULARIO EN EL LOCALSTORAGE
-                    localStorage.setItem("email",$("#logemail").val());
+                    localStorage.setItem("email",email);
+                    alert(JSON.stringify(data));
                     localStorage.setItem("nom",data.nom);
                     localStorage.setItem("ape",data.ape);
                     localStorage.setItem("registrado","true");
-                    alert(data.ok);
+                    alert(data.error);
                     activate_page("#mainpage");
                     location.reload();
                 }else{
