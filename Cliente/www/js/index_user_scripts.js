@@ -396,7 +396,6 @@ function register_event_handlers()
     document.addEventListener("deviceready", function(){
         pushNotification = window.plugins.pushNotification;
         window.console.log("Device Ready");
-        
         window.plugins.pushNotification.unregister(successHandler, errorHandler);
         window.console.log("Unregistered");
         //alert(device.platform);
@@ -458,7 +457,7 @@ function register_event_handlers()
                                 if(fallo[0].localeCompare("Duplicate entry") == 0){
                                     alert("Ya se ha registrado ese email");
                                 }else{
-                                    alert("Error de conexión con el servidor");
+                                    alert("Error inesperado");
                                 }
                             }
                         },
@@ -470,6 +469,7 @@ function register_event_handlers()
                             window.console.log("errorThrown: " + errorThrown);
                             //window.alert(xhr.responseText); 
                             window.alert("Error de conexión con el servidor");
+                            
                         }
                     });
                 evt.preventDefault();
