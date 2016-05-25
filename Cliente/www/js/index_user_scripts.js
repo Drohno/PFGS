@@ -419,71 +419,6 @@ function register_event_handlers()
         return re.test(email);
     }
     
-    /* button  #register */
-    
-    
-        /* button  #register */
-    $(document).on("click", "#register", function(evt)
-    {
-      var email = $("#correo").val();
-        //alert(email);
-      var nom = $("#nom").val();
-        //alert(nom);
-      var ape = $("#ape").val();
-        //alert(ape);
-      //validaciones antes de registrar
-      if (validateEmail(email)) {
-          if (nom !== ""){
-              if(ape !== ""){
-                //Registro de usuario en BBDD
-                $.ajax({
-                        type:'POST',
-                        url:'http://www.appserv.hol.es/appservice.php',
-                        data: $("#form_registro").serialize(),
-                        dataType: 'json',
-                        success: function (data) {
-                            if(data.resultat.localeCompare("ok") == 0){
-                                alert("Correctamente registrado");
-                                //GUARDAR DATOS DEL FORMULARIO EN EL LOCALSTORAGE
-                                localStorage.setItem("email",email);
-                                localStorage.setItem("nom",nom);
-                                localStorage.setItem("ape",ape);
-                                localStorage.setItem("registrado","true");
-                                activate_page("#mainpage");
-                                location.reload();
-                            }else{
-                                var fallo = data.error;
-                                fallo = fallo.match(/Duplicate entry/i);
-                                if(fallo[0].localeCompare("Duplicate entry") == 0){
-                                    alert("Ya se ha registrado ese email");
-                                }else{
-                                    alert("Error inesperado");
-                                }
-                            }
-                        },
-                        error: function(xhr, textStatus, errorThrown, data){
-                            window.console.log("xhr.status: " + xhr.status);
-                            window.console.log("xhr.statusText: " + xhr.statusText);
-                            window.console.log("xhr.readyState: " + xhr.readyState);
-                            window.console.log("xhr.responseText: " + xhr.responseText);
-                            window.console.log("errorThrown: " + errorThrown);
-                            //window.alert(xhr.responseText); 
-                            window.alert("Error de conexión con el servidor");
-                            
-                        }
-                    });
-                evt.preventDefault();
-              } else {
-                  window.alert("Indique su apellido");
-              }
-          } else {
-              window.alert("Indique su nombre");
-          }
-      } else {
-          window.alert("Indique su email correctamente");
-      }
-         return false;
-    });
     
         /* button  Button */
     $(document).on("click", ".uib_w_43", function(evt)
@@ -593,22 +528,16 @@ function register_event_handlers()
             dataType: 'json',
             success: function (data) {
                 if(data.resultat.localeCompare("ok") == 0){
-                    alert("Correctamente registrado");
                     //GUARDAR DATOS DEL FORMULARIO EN EL LOCALSTORAGE
                     localStorage.setItem("email",$("#logemail").val());
                     localStorage.setItem("nom",data.nom);
                     localStorage.setItem("ape",data.ape);
                     localStorage.setItem("registrado","true");
+                    alert(data.ok);
                     activate_page("#mainpage");
                     location.reload();
                 }else{
-                    var fallo = data.error;
-                    fallo = fallo.match(/Duplicate entry/i);
-                    if(fallo[0].localeCompare("Duplicate entry") == 0){
-                        alert("Ya se ha registrado ese email");
-                    }else{
-                        alert("Error de conexión con el servidor");
-                    }
+                   alert(data.error);
                 }
             },
             error: function(xhr, textStatus, errorThrown, data){
@@ -630,6 +559,63 @@ function register_event_handlers()
     {
          /*global activate_page */
          activate_page("#registro"); 
+         return false;
+    });
+    
+        /* button  #register */
+    $(document).on("click", "#register", function(evt)
+    {
+        var email = $("#correo").val();
+        //alert(email);
+      var nom = $("#nom").val();
+        //alert(nom);
+      var ape = $("#ape").val();
+        //alert(ape);
+      //validaciones antes de registrar
+      if (validateEmail(email)) {
+          if (nom !== ""){
+              if(ape !== ""){
+                //Registro de usuario en BBDD
+                $.ajax({
+                        type:'POST',
+                        url:'http://www.appserv.hol.es/appservice.php',
+                        data: $("#form_registro").serialize(),
+                        dataType: 'json',
+                        success: function (data) {
+                            if(data.resultat.localeCompare("ok") == 0){
+                                alert(data.ok);
+                                //GUARDAR DATOS DEL FORMULARIO EN EL LOCALSTORAGE
+                                localStorage.setItem("email",email);
+                                localStorage.setItem("nom",nom);
+                                localStorage.setItem("ape",ape);
+                                localStorage.setItem("registrado","true");
+                                activate_page("#mainpage");
+                                location.reload();
+                            }else{
+                                alert(data.error);
+                            }
+                        },
+                        error: function(xhr, textStatus, errorThrown, data){
+                            window.console.log("xhr.status: " + xhr.status);
+                            window.console.log("xhr.statusText: " + xhr.statusText);
+                            window.console.log("xhr.readyState: " + xhr.readyState);
+                            window.console.log("xhr.responseText: " + xhr.responseText);
+                            window.console.log("errorThrown: " + errorThrown);
+                            //window.alert(xhr.responseText); 
+                            window.alert("Error de conexión con el servidor");
+                            
+                        }
+                    });
+                evt.preventDefault();
+              } else {
+                  window.alert("Indique su apellido");
+              }
+          } else {
+              window.alert("Indique su nombre");
+          }
+      } else {
+          window.alert("Indique su email correctamente");
+      }
          return false;
     });
     
