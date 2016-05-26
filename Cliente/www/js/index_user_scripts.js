@@ -382,11 +382,11 @@ function register_event_handlers()
                             var email = localStorage.getItem("email"); 
                             $.ajax({
                                 type:'POST',
-                                 /* FALTA PONER NOMBRE SERVICIO */
-                                url:'http://www.appserv.hol.es/NOMBRESERVICIO.php',
-                                data: {token: regID, id: 3, email: email},
+                                url:'http://www.appserv.hol.es/apptoken.php',
+                                data: {token: e.regid, codasoc: 3, email: email},
                                 dataType: 'json',
                                 success: function (data) {
+                                    //alert("Success");
                                 },
                                 error: function(xhr, textStatus, errorThrown, data){
                                     window.console.log("xhr.status: " + xhr.status);
@@ -394,7 +394,6 @@ function register_event_handlers()
                                     window.console.log("xhr.readyState: " + xhr.readyState);
                                     window.console.log("xhr.responseText: " + xhr.responseText);
                                     window.console.log("errorThrown: " + errorThrown);
-                                    //window.alert(xhr.responseText); 
                                 }
                             });
                             evt.preventDefault();
@@ -553,7 +552,6 @@ function register_event_handlers()
                 if(data.resultat.localeCompare("ok") == 0){
                     //GUARDAR DATOS DEL FORMULARIO EN EL LOCALSTORAGE
                     localStorage.setItem("email",email);
-                    alert(JSON.stringify(data));
                     localStorage.setItem("nom",data.nom);
                     localStorage.setItem("ape",data.ape);
                     localStorage.setItem("registrado","true");
@@ -570,7 +568,6 @@ function register_event_handlers()
                 window.console.log("xhr.readyState: " + xhr.readyState);
                 window.console.log("xhr.responseText: " + xhr.responseText);
                 window.console.log("errorThrown: " + errorThrown);
-                //window.alert(xhr.responseText); 
                 window.alert("Error de conexión con el servidor");
             }
         });
@@ -589,12 +586,9 @@ function register_event_handlers()
         /* button  #register */
     $(document).on("click", "#register", function(evt)
     {
-        var email = $("#correo").val();
-        //alert(email);
+      var email = $("#correo").val();
       var nom = $("#nom").val();
-        //alert(nom);
       var ape = $("#ape").val();
-        //alert(ape);
       //validaciones antes de registrar
       if (validateEmail(email)) {
           if (nom !== ""){
@@ -607,7 +601,7 @@ function register_event_handlers()
                         dataType: 'json',
                         success: function (data) {
                             if(data.resultat.localeCompare("ok") == 0){
-                                alert(data.ok);
+                                alert(data.error);
                                 //GUARDAR DATOS DEL FORMULARIO EN EL LOCALSTORAGE
                                 localStorage.setItem("email",email);
                                 localStorage.setItem("nom",nom);
@@ -625,8 +619,7 @@ function register_event_handlers()
                             window.console.log("xhr.readyState: " + xhr.readyState);
                             window.console.log("xhr.responseText: " + xhr.responseText);
                             window.console.log("errorThrown: " + errorThrown);
-                            //window.alert(xhr.responseText); 
-                            window.alert("Error de conexión con el servidor");
+                            alert("Error de conexión con servidor");
                             
                         }
                     });
