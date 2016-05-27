@@ -661,14 +661,6 @@ function register_event_handlers()
          return false;
     });
     
-        /* button  #BotonPromociones */
-    $(document).on("click", "#BotonPromociones", function(evt)
-    {
-        location.reload();
-        location.href = 'index.html#promos';
-         return false;
-    });
-    
     }
  document.addEventListener("app.Ready", register_event_handlers, false);
 })();

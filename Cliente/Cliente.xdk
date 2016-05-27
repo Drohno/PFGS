@@ -6,7 +6,7 @@
       "projectTypeName": "com.intel.xdk.projecttype.jsapp",
       "src": "jsapp/template-blank-cordova-ad-project/sample.zip",
       "projectGuid": "b384d701-d406-4b4b-87ec-78f4198c5c01",
-      "lastModifiedDate": 1464381694832,
+      "lastModifiedDate": 1464382216260,
       "creationDate": 1462379172914
     },
     "XDK-app-designer": "true",
@@ -105,7 +105,7 @@
         "preferences_": {
           "android-minSdkVersion": "14",
           "android-targetSdkVersion": "21",
-          "android-installLocation": "preferExternal",
+          "android-installLocation": "auto",
           "android-signed": true,
           "Orientation": "portrait",
           "Fullscreen": false
@@ -154,7 +154,7 @@
         "excludedLibraries_": "",
         "certificateId_": "oHTV6Mb2Vk69kpaHnp0cZA2",
         "cordovaCLIVersion_": "5.4.1",
-        "crosswalkVersion_": "shared",
+        "crosswalkVersion_": "17",
         "appVersion_": "1.0 FINAL",
         "appAuthor_": "D&J Soft.",
         "appDescription_": "Aplicación de Asociación de Comercios Locales  de Sant Boi de Llobregat",
