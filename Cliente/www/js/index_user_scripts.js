@@ -49,6 +49,7 @@ function register_event_handlers()
     {
          /*global activate_page */
          activate_page("#mainpage");
+        uib_sb.close_all_sidebars;
     });
 
         /* button  #navBpromos */
@@ -74,6 +75,7 @@ function register_event_handlers()
     {
          /*global activate_subpage */
          activate_subpage("#a20cmstudio");
+        uib_sb.close_all_sidebars;
     });
 
         /* listitem  Librerías, papelerías */
@@ -81,6 +83,7 @@ function register_event_handlers()
     {
          /*global activate_subpage */
          activate_subpage("#abacus");
+        uib_sb.close_all_sidebars;
     });
 
         /* listitem  Informática Sant Boi */
@@ -112,6 +115,7 @@ function register_event_handlers()
     {
          /*global activate_subpage */
          activate_subpage("#informaticastboi");
+        uib_sb.close_all_sidebars;
     });
 
         /* button  #navRegistro */
@@ -125,10 +129,43 @@ function register_event_handlers()
     {
          /*global activate_page */
          activate_page("#registro");
+        uib_sb.close_all_sidebars;
     });
 
         /* button  #bPp */
 
+
+        /* button  #bPp */
+    $(document).on("click", "#bPp", function(evt)
+    {
+         /*global activate_page */
+         activate_page("#promos");
+        uib_sb.close_all_sidebars;
+    });
+
+        /* button  #bPr */
+    $(document).on("click", "#bPr", function(evt)
+    {
+         /*global activate_page */
+         activate_page("#registro");
+        uib_sb.close_all_sidebars;
+    });
+
+        /* button  #bPp */
+    $(document).on("click", "#bPp", function(evt)
+    {
+         /*global activate_page */
+         activate_page("#promos");
+        uib_sb.close_all_sidebars;
+    });
+
+        /* button  #bPr */
+    $(document).on("click", "#bPr", function(evt)
+    {
+         /*global activate_page */
+         activate_page("#registro");
+        uib_sb.close_all_sidebars;
+    });
 
         /* button  #bPp */
     $(document).on("click", "#bPp", function(evt)
@@ -142,6 +179,7 @@ function register_event_handlers()
     {
          /*global activate_page */
          activate_page("#registro");
+        uib_sb.close_all_sidebars;
     });
 
         /* button  #bPp */
@@ -149,6 +187,7 @@ function register_event_handlers()
     {
          /*global activate_page */
          activate_page("#promos");
+        uib_sb.close_all_sidebars;
     });
 
         /* button  #bPr */
@@ -156,34 +195,7 @@ function register_event_handlers()
     {
          /*global activate_page */
          activate_page("#registro");
-    });
-
-        /* button  #bPp */
-    $(document).on("click", "#bPp", function(evt)
-    {
-         /*global activate_page */
-         activate_page("#promos");
-    });
-
-        /* button  #bPr */
-    $(document).on("click", "#bPr", function(evt)
-    {
-         /*global activate_page */
-         activate_page("#registro");
-    });
-
-        /* button  #bPp */
-    $(document).on("click", "#bPp", function(evt)
-    {
-         /*global activate_page */
-         activate_page("#promos");
-    });
-
-        /* button  #bPr */
-    $(document).on("click", "#bPr", function(evt)
-    {
-         /*global activate_page */
-         activate_page("#registro");
+        uib_sb.close_all_sidebars;
     });
      
         /* listitem  .uib_w_21 */
@@ -194,6 +206,7 @@ function register_event_handlers()
     {
          /*global activate_subpage */
          activate_subpage("#fogonstboi");
+        uib_sb.close_all_sidebars;
     });
 
         /* listitem  Fotografía e Informática */
@@ -211,6 +224,7 @@ function register_event_handlers()
     {
          /*global activate_subpage */
          activate_subpage("#abacus");
+        uib_sb.close_all_sidebars;
     });
 
         /* listitem  Informática Sant Boi */
@@ -218,6 +232,7 @@ function register_event_handlers()
     {
          /*global activate_subpage */
          activate_subpage("#informaticastboi");
+        uib_sb.close_all_sidebars;
     });
 
         /* listitem  .uib_w_34 */
@@ -225,6 +240,7 @@ function register_event_handlers()
     {
          /*global activate_subpage */
          activate_subpage("#quiroteresa");
+        uib_sb.close_all_sidebars;
     });
 
         /* listitem  El Fogon de Sant Boi */
@@ -232,6 +248,7 @@ function register_event_handlers()
     {
          /*global activate_subpage */
          activate_subpage("#fogonstboi");
+        uib_sb.close_all_sidebars;
     });
      
       /* button  #bPc */
@@ -239,6 +256,7 @@ function register_event_handlers()
     {
          /*global activate_page */
          activate_page("#cuenta"); 
+        uib_sb.close_all_sidebars;
     });
     
         /* button  #navBCuenta */
@@ -252,6 +270,7 @@ function register_event_handlers()
     {
          /*global activate_page */
          activate_page("#tiendas"); 
+        uib_sb.close_all_sidebars;
     });
     
         /* button  #SliderBarBotonRegistro */
@@ -259,13 +278,15 @@ function register_event_handlers()
     {
          /*global activate_page */
          activate_page("#registro"); 
+        uib_sb.close_all_sidebars;
     });
     
         /* button  #SliderBarBotonCuenta */
     $(document).on("click", "#SliderBarBotonCuenta", function(evt)
     {
          /*global activate_page */
-         activate_page("#cuenta"); 
+         activate_page("#cuenta");
+        uib_sb.close_all_sidebars;
     });
     
         /* button  Registro */
@@ -450,6 +471,7 @@ function register_event_handlers()
         localStorage.setItem("registrado","false");
         alert("Sesión cerrada")
         activate_page("#mainpage");
+        uib_sb.close_all_sidebars;
         location.reload();
          return false;
     });
@@ -528,6 +550,7 @@ function register_event_handlers()
     {
          /*global activate_page */
          activate_page("#cuenta"); 
+        uib_sb.close_all_sidebars;
          return false;
     });
     
@@ -536,6 +559,7 @@ function register_event_handlers()
     {
          /*global activate_page */
          activate_page("#login"); 
+        uib_sb.close_all_sidebars;
          return false;
     });
     
@@ -579,7 +603,8 @@ function register_event_handlers()
     $(document).on("click", "#ARegistro", function(evt)
     {
          /*global activate_page */
-         activate_page("#registro"); 
+         activate_page("#registro");
+        uib_sb.close_all_sidebars;
          return false;
     });
     
