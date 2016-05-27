@@ -6,7 +6,7 @@
       "projectTypeName": "com.intel.xdk.projecttype.jsapp",
       "src": "jsapp/template-blank-cordova-ad-project/sample.zip",
       "projectGuid": "b384d701-d406-4b4b-87ec-78f4198c5c01",
-      "lastModifiedDate": 1464375056325,
+      "lastModifiedDate": 1464379702580,
       "creationDate": 1462379172914
     },
     "XDK-app-designer": "true",
@@ -106,7 +106,7 @@
           "android-minSdkVersion": "14",
           "android-targetSdkVersion": "21",
           "android-installLocation": "preferExternal",
-          "android-signed": false,
+          "android-signed": true,
           "Orientation": "portrait",
           "Fullscreen": false
         },
