@@ -160,7 +160,74 @@
                 <a class="navbar-brand" href="#">Promos</a>
                 <div id="bs-navbar-0" class="navbar-collapse collapse"></div>
             </div>
-        </div>
+            <!-- Lista de ofertas autogenerada en base a la info de la BBDD -->
+            <div data-role="content">
+                <div class="example-wrapper" data-iscroll>
+                    <ul data-role="listview" id="promo_list">
+
+                    </ul>
+                </div>
+            </div>
+            <!-- CODI QUE RELLENA EL LISTVIEW -->
+        <script>
+            //$('#promo-list').append('<li><p>Hola mundo</p></li>');
+            alert("Entrando al codigo que rellena listview");
+            $.ajax({
+                type:'POST',
+                url:'http://www.appserv.hol.es/apppromos.php',
+                data: {codasoc: 3},
+                dataType: 'json',
+                success: function (data) {
+                   for(var i = 0; i<data.ofertas.length; i++){
+                    //[i][0] -> Titulo oferta
+                    //[i][1] -> Cuerpo oferta
+                    //[i][2] -> URL imagen
+                    //[i][3] -> inicio oferta
+                    //[i][4] -> fin oferta
+                     $('#promo_list').append('<li><img src="'+data.ofertas[i][2]+'" style="max-width: 100%; margin: auto; display: block; padding: 0px; margin:0px;"><h3>'+data.ofertas[i][0] 
+                    +'</h3><p>' + data.ofertas[i][1] +'</p>'
+                    +'<h4>Inicio oferta:</h4><p>' + data.ofertas[i][3]  + '</p>'
+                    +'<h4>Fin oferta:</h4><p>'+ data.ofertas[i][4] + '</p></li>');
+                     /*alert(data.ofertas[i][0]);
+                     alert(data.ofertas[i][1]);
+                     alert(data.ofertas[i][2]);
+                     alert(data.ofertas[i][3]);
+                     alert(data.ofertas[i][4]);
+                       */  
+                    }
+                $('#promo_list').listview('refresh');
+                },
+                error: function(xhr, textStatus, errorThrown, data){
+                    window.console.log("xhr.status: " + xhr.status);
+                    window.console.log("xhr.statusText: " + xhr.statusText);
+                    window.console.log("xhr.readyState: " + xhr.readyState);
+                    window.console.log("xhr.responseText: " + xhr.responseText);
+                    window.console.log("errorThrown: " + errorThrown);
+                    alert("Error consiguiendo ofertas");
+                    //Esto va al success
+                    //data = JSON.parse(xhr.responseText);
+
+                }
+            });   
+            /*  
+            var ajax = {  
+                parseJSONP:function(data){  
+                    $.each(data.ofertas, function(i, row) {
+                        alert();
+                        //console.log(JSON.stringify(row));
+                        /*$('#promo-list').append('<li><img src="'+row.imagen+'"><h3>' 
+                        + row.titulo 
+                        + '</h3><p>' + row.cuerpo +'</p>'
+                        + '<h4>Inicio oferta:</h4><p>' + row.inicio  + '</p>'
+                        +'<h4>Fin oferta:</h4><p>'+ row.fin + '</p>'</li>');
+                        
+                    });
+                    //$('#promo-list').listview('refresh');
+                }
+            }
+            */
+        </script>
+        </div> 
         <!-- CODI LOGIN -->
         <div class="upage vertical-col left hidden" id="login">
             <!-- CODI SLIDEBAR -->
