@@ -607,11 +607,12 @@ function register_event_handlers()
         uib_sb.close_all_sidebars;
          return false;
     });
+        
     
         /* button  #register */
     $(document).on("click", "#register", function(evt)
     {
-      var email = $("#correo").val();
+    var email = $("#correo").val();
       var nom = $("#nom").val();
       var ape = $("#ape").val();
       //validaciones antes de registrar

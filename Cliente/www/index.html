@@ -163,7 +163,8 @@
             <!-- Lista de ofertas autogenerada en base a la info de la BBDD -->
             <div data-role="content">
                 <div class="example-wrapper" data-iscroll="">
-                    <ul data-role="listview" id="promo_list">
+                    <ul data-role="listview" id="promo_list" style="list-style-type: none; padding: 0px; margin: 0px;">
+                    <!-- RELLENADO POR script EN JS -->
                     </ul>
                 </div>
             </div>
@@ -177,21 +178,22 @@
                 dataType: 'json',
                 success: function (data) {
                    for(var i = 0; i<data.ofertas.length; i++){
-                    //[i][0] -> Titulo oferta
-                    //[i][1] -> Cuerpo oferta
-                    //[i][2] -> URL imagen
-                    //[i][3] -> inicio oferta
-                    //[i][4] -> fin oferta
-                     $('#promo_list').append('<li><img src="'+data.ofertas[i][2]+'" style="max-width: 100%; margin: auto; display: block; padding: 0px; margin:0px;"><h3>'+data.ofertas[i][0] 
-                    +'</h3><p>' + data.ofertas[i][1] +'</p>'
-                    +'<h4>Inicio oferta:</h4><p>' + data.ofertas[i][3]  + '</p>'
-                    +'<h4>Fin oferta:</h4><p>'+ data.ofertas[i][4] + '</p></li>');
-                     /*alert(data.ofertas[i][0]);
-                     alert(data.ofertas[i][1]);
-                     alert(data.ofertas[i][2]);
-                     alert(data.ofertas[i][3]);
-                     alert(data.ofertas[i][4]);
-                       */  
+                        //[i][0] -> Titulo oferta
+                        //[i][1] -> Cuerpo oferta
+                        //[i][2] -> URL imagen
+                        //[i][3] -> inicio oferta
+                        //[i][4] -> fin oferta
+                        if(i%2==0){
+                             $('#promo_list').append('<li style="margin: 10px; background-color: #FDA6AC; border: 5px groove;"><img src="'+data.ofertas[i][2]+'" style="width: 100%; margin: auto; display: block; padding: 0px; margin:0px;"><h3>'+data.ofertas[i][0] 
+                            +'</h3><p>' + data.ofertas[i][1] +'</p>'
+                            +'<h4>Inicio oferta:</h4><p>' + data.ofertas[i][3]  + '</p>'
+                            +'<h4>Fin oferta:</h4><p>'+ data.ofertas[i][4] + '</p></li>');
+                        }else{
+                            $('#promo_list').append('<li style="margin: 10px; background-color: #FED2D5; border: 5px groove;"><img src="'+data.ofertas[i][2]+'" style="width: 100%; margin: auto; display: block; padding: 0px; margin:0px;"><h3>'+data.ofertas[i][0] 
+                            +'</h3><p>' + data.ofertas[i][1] +'</p>'
+                            +'<h4>Inicio oferta:</h4><p>' + data.ofertas[i][3]  + '</p>'
+                            +'<h4>Fin oferta:</h4><p>'+ data.ofertas[i][4] + '</p></li>');
+                        }
                     }
                 $('#promo_list').listview('refresh');
                 },
@@ -202,28 +204,31 @@
                     window.console.log("xhr.responseText: " + xhr.responseText);
                     window.console.log("errorThrown: " + errorThrown);
                     alert("Error consiguiendo ofertas");
+                    
                     //Esto va al success
-                    //data = JSON.parse(xhr.responseText);
-
+                    /*
+                    data = JSON.parse(xhr.responseText);
+                    for(var i = 0; i<data.ofertas.length; i++){
+                        //[i][0] -> Titulo oferta
+                        //[i][1] -> Cuerpo oferta
+                        //[i][2] -> URL imagen
+                        //[i][3] -> inicio oferta
+                        //[i][4] -> fin oferta
+                        if(i%2==0){
+                             $('#promo_list').append('<li style="margin: 10px; background-color: #FDA6AC; border: 5px groove;"><img src="'+data.ofertas[i][2]+'" style="width: 100%; margin: auto; display: block; padding: 0px; margin:0px;"><h3>'+data.ofertas[i][0] 
+                            +'</h3><p>' + data.ofertas[i][1] +'</p>'
+                            +'<h4>Inicio oferta:</h4><p>' + data.ofertas[i][3]  + '</p>'
+                            +'<h4>Fin oferta:</h4><p>'+ data.ofertas[i][4] + '</p></li>');
+                        }else{
+                            $('#promo_list').append('<li style="margin: 10px; background-color: #FED2D5; border: 5px groove;"><img src="'+data.ofertas[i][2]+'" style="width: 100%; margin: auto; display: block; padding: 0px; margin:0px;"><h3>'+data.ofertas[i][0] 
+                            +'</h3><p>' + data.ofertas[i][1] +'</p>'
+                            +'<h4>Inicio oferta:</h4><p>' + data.ofertas[i][3]  + '</p>'
+                            +'<h4>Fin oferta:</h4><p>'+ data.ofertas[i][4] + '</p></li>');
+                        }
+                    }
+                    */
                 }
             });   
-            /*  
-            var ajax = {  
-                parseJSONP:function(data){  
-                    $.each(data.ofertas, function(i, row) {
-                        alert();
-                        //console.log(JSON.stringify(row));
-                        /*$('#promo-list').append('<li><img src="'+row.imagen+'"><h3>' 
-                        + row.titulo 
-                        + '</h3><p>' + row.cuerpo +'</p>'
-                        + '<h4>Inicio oferta:</h4><p>' + row.inicio  + '</p>'
-                        +'<h4>Fin oferta:</h4><p>'+ row.fin + '</p>'</li>');
-                        
-                    });
-                    //$('#promo-list').listview('refresh');
-                }
-            }
-            */
         </script>
         <!-- CODI LOGIN -->
         <div class="upage vertical-col left hidden" id="login">
