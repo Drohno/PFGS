@@ -6,7 +6,7 @@
       "projectTypeName": "com.intel.xdk.projecttype.jsapp",
       "src": "jsapp/template-blank-cordova-ad-project/sample.zip",
       "projectGuid": "b384d701-d406-4b4b-87ec-78f4198c5c01",
-      "lastModifiedDate": 1464623333474,
+      "lastModifiedDate": 1464631934006,
       "creationDate": 1462379172914
     },
     "XDK-app-designer": "true",
@@ -111,7 +111,7 @@
           "Fullscreen": false
         },
         "isActive_": true,
-        "appName_": "Sant Boi Comercial",
+        "appName_": "Una Gran Botiga",
         "appID_": "xdk.dandj.stboi",
         "appAccess_": {
           "mode": "whitelist",
@@ -155,7 +155,7 @@
         "certificateId_": "oHTV6Mb2Vk69kpaHnp0cZA2",
         "cordovaCLIVersion_": "5.4.1",
         "crosswalkVersion_": "17",
-        "appVersion_": "1.1 FINAL",
+        "appVersion_": "1.0  THE END IS NEAR",
         "appAuthor_": "D&J Soft.",
         "appDescription_": "Aplicación de Asociación de Comercios Locales  de Sant Boi de Llobregat",
         "appVersionCode_": "1"
