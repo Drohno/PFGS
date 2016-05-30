@@ -285,9 +285,7 @@ body#afui .splt {
 }
 @media all {
   .bar-bg {
-    background-color: ;
-    background-image: linear-gradient(top, #ff00ff 0%, #ff00ff 0%, #160306 100%, #160306 100%);
-    background-image: -webkit-linear-gradient(top, #ff00ff 0%, #ff00ff 0%, #160306 100%, #160306 100%);
+    background-color: #47b8e0;
     background-position: center center;
     background-repeat: no-repeat;
     background-attachment: scroll;
@@ -327,16 +325,6 @@ body#afui .splt {
   float: right;
 }
 @media all {
-  .vertical-col > .d-margins,
-  .vertical-col > .afScrollPanel > .d-margins {
-    margin-left: 5px;
-    margin-right: 0px;
-  }
-  .vertical-col > .d-margins,
-  .vertical-col > .afScrollPanel > .d-margins {
-    margin-left: 5px;
-    margin-right: 0px;
-  }
   .d-margins {
     margin-top: 5px;
     margin-bottom: 0px;
@@ -427,12 +415,14 @@ label:empty {
   margin: 0;
 }
 .ButtonStyle {
-  background-color: #B05883;
+  background-color: #47cfef;
+  font-size: 1.5em;
+  color: white;
 }
 .navStyleButton {
   float: right;
   margin: 10px;
-  background-color: #B05883;
+  background-color: #ff7473;
 }
 .vertical-col > .label {
   display: block;
@@ -504,7 +494,7 @@ label:empty {
 }
 @media all {
   .navbarBackground {
-    background-color: #f400ee;
+    background-color: #ff7473;
     background-position: center center;
     background-repeat: no-repeat;
     background-attachment: scroll;
@@ -584,4 +574,13 @@ label:empty {
 }
 .red {
   background-color: #FF0505;
+}
+.Sliders {
+  background-color: #47b8e0;
+  border-radius: 0px 15px 15px 0px;
+}
+@media all {
+  .botonesSlider {
+    margin-top: 30px;
+  }
 }
